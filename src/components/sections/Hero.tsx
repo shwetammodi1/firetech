@@ -206,7 +206,7 @@ export default function Hero() {
           >
             {STATS.map(({ icon: Icon, value, label }, idx) => (
               <div key={label} className="flex items-center gap-0">
-                <div className="flex flex-col items-center px-8 py-4 glass rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-white/5 hover:border-fire-500/20 transition-all duration-300 hover:bg-fire-500/5 group min-w-[140px]">
+                <div className="flex flex-col items-center px-6 py-4 glass rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-white/5 hover:border-fire-500/20 transition-all duration-300 hover:bg-fire-500/5 group w-full sm:min-w-[140px]">
                   <Icon className="w-6 h-6 text-fire-500 mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-heading font-black text-2xl text-smoke-100 gradient-fire">{value}</span>
                   <span className="text-smoke-500 text-xs mt-0.5 font-medium tracking-wide">{label}</span>

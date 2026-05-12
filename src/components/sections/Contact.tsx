@@ -87,7 +87,7 @@ export default function Contact() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-10 items-start">
 
           {/* ── Left: contact info ── */}
           <motion.div
@@ -139,7 +139,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65 }}
           >
-            <div className="glass rounded-3xl border border-white/6 p-8">
+            <div className="glass rounded-3xl border border-white/6 p-5 sm:p-8">
               {formState === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
                   <div className="w-16 h-16 rounded-2xl bg-fire-500/15 border border-fire-500/30 flex items-center justify-center">

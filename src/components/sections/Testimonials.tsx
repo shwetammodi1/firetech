@@ -148,7 +148,7 @@ export default function Testimonials() {
             <div className="grid md:grid-cols-[1fr_2fr] gap-0">
 
               {/* Left sidebar */}
-              <div className="relative flex flex-col items-center justify-center p-8 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-white/5">
+              <div className="relative flex flex-col items-center justify-center p-6 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-white/5">
                 {/* Avatar */}
                 <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-heading font-black mb-4 border border-white/10 ${t.color}`}>
                   {t.initials}
@@ -168,7 +168,7 @@ export default function Testimonials() {
               </div>
 
               {/* Right: quote */}
-              <div className="flex flex-col justify-center p-8 md:p-12">
+              <div className="flex flex-col justify-center p-6 md:p-12">
                 <Quote className="w-10 h-10 text-fire-500/25 mb-4 flex-shrink-0" />
                 <AnimatePresence mode="wait">
                   <motion.p
@@ -187,7 +187,7 @@ export default function Testimonials() {
           </div>
 
           {/* Navigation row */}
-          <div className="flex items-center justify-between gap-4 px-2">
+          <div className="flex flex-wrap items-center justify-between gap-3 px-1">
             {/* Prev / Next */}
             <div className="flex items-center gap-3">
               <button

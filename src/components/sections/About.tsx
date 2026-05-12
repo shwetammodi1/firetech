@@ -45,7 +45,7 @@ export default function About() {
       />
 
       <Container>
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* ── Left: text content ── */}
           <motion.div

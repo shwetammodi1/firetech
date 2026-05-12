@@ -80,7 +80,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       custom={index}
       className="relative glass rounded-2xl p-6 border border-white/5
                  hover:border-fire-500/25 hover:bg-fire-500/[0.025]
-                 transition-all duration-400 group cursor-default overflow-hidden"
+                 transition-all duration-400 group cursor-default overflow-hidden
+                 flex flex-col h-full"
     >
       {/* Top-right corner glow on hover */}
       <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-fire-500/0 group-hover:bg-fire-500/10 transition-all duration-500 blur-xl" />
@@ -101,7 +102,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       <h3 className="font-heading font-bold text-smoke-100 text-base mb-2.5 leading-snug group-hover:text-white transition-colors duration-300">
         {title}
       </h3>
-      <p className="text-smoke-500 text-sm leading-relaxed group-hover:text-smoke-400 transition-colors duration-300">
+      <p className="text-smoke-500 text-sm leading-relaxed group-hover:text-smoke-400 transition-colors duration-300 flex-1">
         {desc}
       </p>
 
@@ -155,7 +156,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-14 glass-fire rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+          className="mt-14 glass-fire rounded-2xl p-5 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
         >
           <div>
             <p className="font-heading font-bold text-smoke-100 text-lg">

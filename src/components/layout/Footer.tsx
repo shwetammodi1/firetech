@@ -120,9 +120,9 @@ export default function Footer() {
                 <li key={s}>
                   <a
                     href="#services"
-                    className="text-smoke-600 hover:text-fire-400 text-sm transition-colors duration-300 flex items-center gap-1.5 group"
+                    className="text-smoke-600 hover:text-fire-400 text-sm leading-snug transition-colors duration-300 flex items-start gap-1.5 group"
                   >
-                    <span className="w-0 group-hover:w-3 h-px bg-fire-500 transition-all duration-300 rounded-full" />
+                    <span className="w-0 group-hover:w-3 mt-1.5 h-px bg-fire-500 transition-all duration-300 rounded-full flex-shrink-0" />
                     {s}
                   </a>
                 </li>

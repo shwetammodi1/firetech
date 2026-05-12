@@ -114,7 +114,8 @@ export default function WhyUs() {
               variants={fadeUp}
               className="relative glass rounded-2xl p-6 border border-white/5
                          hover:border-fire-500/20 hover:bg-fire-500/[0.025]
-                         transition-all duration-400 group overflow-hidden"
+                         transition-all duration-400 group overflow-hidden
+                         flex flex-col h-full"
             >
               {/* Top glow on hover */}
               <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-fire-500/0 group-hover:bg-fire-500/10 blur-xl transition-all duration-500 pointer-events-none" />
@@ -125,7 +126,7 @@ export default function WhyUs() {
               <h3 className="font-heading font-bold text-smoke-100 text-sm mb-2 leading-snug">
                 {title}
               </h3>
-              <p className="text-smoke-500 text-xs leading-relaxed group-hover:text-smoke-400 transition-colors duration-300">
+              <p className="text-smoke-500 text-xs leading-relaxed group-hover:text-smoke-400 transition-colors duration-300 flex-1">
                 {desc}
               </p>
             </motion.div>

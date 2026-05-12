@@ -36,7 +36,7 @@ export default function ISOBadge() {
           <div className="grid md:grid-cols-2 gap-0">
 
             {/* ── Left: ISO emblem block ── */}
-            <div className="relative flex flex-col items-center justify-center p-10 md:p-14 bg-fire-500/[0.06] border-b md:border-b-0 md:border-r border-fire-500/15">
+            <div className="relative flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 bg-fire-500/[0.06] border-b md:border-b-0 md:border-r border-fire-500/15">
               {/* Background rings */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-64 h-64 rounded-full border border-fire-500/10" />
@@ -65,7 +65,7 @@ export default function ISOBadge() {
             </div>
 
             {/* ── Right: what it means ── */}
-            <div className="flex flex-col justify-center p-10 md:p-14">
+            <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14">
               <div className="inline-flex items-center gap-2 glass-fire rounded-full px-4 py-1.5 text-xs font-bold tracking-widest text-fire-400 uppercase border border-fire-500/20 mb-6 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse" />
                 Quality Certified
