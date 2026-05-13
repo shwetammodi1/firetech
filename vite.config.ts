@@ -12,10 +12,10 @@ export default defineConfig({
     // Split vendor chunks for better caching
     rollupOptions: {
       output: {
-        manualChunks: {
-          react:    ['react', 'react-dom'],
-          motion:   ['framer-motion'],
-          lucide:   ['lucide-react'],
+        manualChunks: (id) => {
+          if (id.includes('react') || id.includes('react-dom')) return 'react'
+          if (id.includes('framer-motion')) return 'motion'
+          if (id.includes('lucide-react')) return 'lucide'
         },
       },
     },

@@ -8,7 +8,7 @@ import Container from '../layout/Container'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40, scale: 0.97 },
-  show:   { opacity: 1, y: 0,  scale: 1, transition: { duration: 0.55, ease: 'easeOut' } },
+  show:   { opacity: 1, y: 0,  scale: 1, transition: { duration: 0.55, ease: 'easeOut' as const } },
 }
 
 interface Service {
@@ -167,7 +167,7 @@ export default function Services() {
             </p>
           </div>
           <a
-            href="https://wa.me/917000000000?text=Hello%20Firetech%2C%20I%20would%20like%20to%20book%20a%20free%20site%20inspection."
+            href="https://wa.me/918964005455?text=Hello%20Firetech%2C%20I%20would%20like%20to%20book%20a%20free%20site%20inspection."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-fire-900/40 hover:shadow-fire-500/25 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"

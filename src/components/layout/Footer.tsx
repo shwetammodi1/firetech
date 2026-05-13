@@ -1,6 +1,6 @@
 import { Flame, MessageCircle, Phone, Mail, MapPin, Globe, Share2, Rss, ArrowUp } from 'lucide-react'
 
-const WHATSAPP_URL = 'https://wa.me/917000000000'
+const WHATSAPP_URL = 'https://wa.me/918964005455'
 
 const NAV_LINKS = [
   { label: 'Home',         href: '#home' },
@@ -137,10 +137,10 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-4">
               {[
-                { icon: Phone,   label: '+91 70000 00000',           href: 'tel:+917000000000' },
+                { icon: Phone,   label: '+91 89640 05455',           href: 'tel:+918964005455' },
                 { icon: MessageCircle, label: 'Chat on WhatsApp',    href: WHATSAPP_URL },
-                { icon: Mail,    label: 'info@firetechenterprises.in', href: 'mailto:info@firetechenterprises.in' },
-                { icon: MapPin,  label: 'Mumbai, Maharashtra — Pan-India', href: '#' },
+                { icon: Mail,    label: 'mohtmhs@gmail.com', href: 'mailto:mohtmhs@gmail.com' },
+                { icon: MapPin,  label: '296, Shubham Green\'s CAT Road, Indore, MP', href: '#' },
               ].map(({ icon: Icon, label, href }) => (
                 <li key={label}>
                   <a

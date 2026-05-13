@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, Phone, ChevronDown, ShieldCheck, Award, Users } from 'lucide-react'
 
-const WHATSAPP_URL = 'https://wa.me/917000000000?text=Hello%20Firetech%20Enterprises%2C%20I%20need%20a%20fire%20safety%20quote.'
-const PHONE_URL    = 'tel:+917000000000'
+const WHATSAPP_URL = 'https://wa.me/918964005455?text=Hello%20Firetech%20Enterprises%2C%20I%20need%20a%20fire%20safety%20quote.'
+const PHONE_URL    = 'tel:+918964005455'
 
 /* ── Floating ember particle ── */
 function Ember({ style }: { style: React.CSSProperties }) {
@@ -12,9 +12,9 @@ function Ember({ style }: { style: React.CSSProperties }) {
       style={style}
       animate={{ y: [0, -120, -240], opacity: [0, 1, 0], scale: [0.5, 1, 0.3] }}
       transition={{
-        duration: style['--dur'] as number ?? 4,
+        duration: (style as Record<string, unknown>)['--dur'] as number ?? 4,
         repeat: Infinity,
-        delay: style['--delay'] as number ?? 0,
+        delay: (style as Record<string, unknown>)['--delay'] as number ?? 0,
         ease: 'easeOut',
       }}
     />

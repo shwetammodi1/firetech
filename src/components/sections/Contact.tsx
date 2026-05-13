@@ -4,16 +4,18 @@ import { MessageCircle, Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'l
 import SectionHeader from '../ui/SectionHeader'
 import Container from '../layout/Container'
 
-const WHATSAPP_URL = 'https://wa.me/917000000000?text=Hello%20Firetech%20Enterprises%2C%20I%20have%20an%20enquiry.'
-const PHONE        = '+91 70000 00000'
-const EMAIL        = 'info@firetechenterprises.in'
-const ADDRESS      = 'Mumbai, Maharashtra — Pan-India Service'
+const WHATSAPP_URL = 'https://wa.me/918964005455?text=Hello%20Firetech%20Enterprises%2C%20I%20have%20an%20enquiry.'
+const PHONE        = '+91 89640 05455'
+const PHONE2       = '+91 83193 49279'
+const EMAIL        = 'mohtmhs@gmail.com'
+const ADDRESS      = '296, Shubham Green\'s CAT Road, Indore, MP'
 
 const INFO_ITEMS = [
-  { icon: Phone,   label: 'Call Us',      value: PHONE,   href: 'tel:+917000000000' },
-  { icon: Mail,    label: 'Email Us',     value: EMAIL,   href: `mailto:${EMAIL}` },
-  { icon: MapPin,  label: 'Location',     value: ADDRESS, href: '#' },
-  { icon: Clock,   label: 'Working Hours', value: 'Mon–Sat: 9 AM – 7 PM', href: '#' },
+  { icon: Phone,   label: 'Call Us',        value: PHONE,   href: 'tel:+918964005455' },
+  { icon: Phone,   label: 'Secondary',      value: PHONE2,  href: 'tel:+918319349279' },
+  { icon: Mail,    label: 'Email Us',       value: EMAIL,   href: `mailto:${EMAIL}` },
+  { icon: MapPin,  label: 'Location',       value: ADDRESS, href: '#' },
+  { icon: Clock,   label: 'Working Hours',  value: 'Mon-Sat: 9 AM – 8 PM', href: '#' },
 ]
 
 const SERVICES_LIST = [
@@ -29,7 +31,7 @@ const SERVICES_LIST = [
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 }
 
 type FormState = 'idle' | 'submitting' | 'success'
@@ -53,7 +55,7 @@ export default function Contact() {
     )
     // Simulate a tiny delay then redirect to WhatsApp
     setTimeout(() => {
-      window.open(`https://wa.me/917000000000?text=${msg}`, '_blank', 'noopener,noreferrer')
+      window.open(`https://wa.me/918964005455?text=${msg}`, '_blank', 'noopener,noreferrer')
       setFormState('success')
     }, 600)
   }
