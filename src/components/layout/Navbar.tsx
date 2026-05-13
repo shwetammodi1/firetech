@@ -68,7 +68,7 @@ export default function Navbar() {
           <div
             className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
             style={{
-              background: 'linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.5) 30%, rgba(249,115,22,0.8) 50%, rgba(249,115,22,0.5) 70%, transparent 100%)',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(239,68,68,0.5) 30%, rgba(239,68,68,0.8) 50%, rgba(239,68,68,0.5) 70%, transparent 100%)',
             }}
           />
         )}

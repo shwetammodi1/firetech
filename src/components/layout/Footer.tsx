@@ -37,7 +37,7 @@ export default function Footer() {
       {/* Ambient */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(249,115,22,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(239,68,68,0.05) 0%, transparent 70%)' }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

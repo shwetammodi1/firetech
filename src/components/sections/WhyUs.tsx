@@ -76,7 +76,7 @@ export default function WhyUs() {
       {/* Top-right ambient */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.1) 0%, transparent 65%)' }}
       />
       {/* Bottom-left ambient */}
       <div

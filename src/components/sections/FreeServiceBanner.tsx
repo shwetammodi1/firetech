@@ -16,7 +16,7 @@ export default function FreeServiceBanner() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(90deg, rgba(249,115,22,0.07) 0%, rgba(239,68,68,0.05) 50%, rgba(249,115,22,0.07) 100%)',
+            'linear-gradient(90deg, rgba(239,68,68,0.07) 0%, rgba(239,68,68,0.05) 50%, rgba(239,68,68,0.07) 100%)',
         }}
       />
 

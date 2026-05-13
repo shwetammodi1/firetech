@@ -71,7 +71,7 @@ export default function Contact() {
       {/* Ambient */}
       <div
         className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.09) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.09) 0%, transparent 65%)' }}
       />
 
       <Container>

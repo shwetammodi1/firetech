@@ -116,7 +116,7 @@ export default function Testimonials() {
       {/* Ambient glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 65%)' }}
       />
 
       <Container size="lg">

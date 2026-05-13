@@ -91,7 +91,7 @@ body {
    SELECTION
    ========================================= */
 ::selection {
-  background: rgba(249, 115, 22, 0.35);
+  background: rgba(239, 68, 68, 0.35);
   color: #fff;
 }
 
@@ -102,16 +102,16 @@ body {
 /* Fire glow effects */
 .fire-glow {
   box-shadow:
-    0 0 20px rgba(249, 115, 22, 0.5),
-    0 0 40px rgba(249, 115, 22, 0.25),
-    0 0 80px rgba(249, 115, 22, 0.1);
+    0 0 20px rgba(239, 68, 68, 0.5),
+    0 0 40px rgba(239, 68, 68, 0.25),
+    0 0 80px rgba(239, 68, 68, 0.1);
 }
 
 .fire-text-glow {
   text-shadow:
-    0 0 20px rgba(249, 115, 22, 0.7),
-    0 0 40px rgba(249, 115, 22, 0.4),
-    0 0 80px rgba(249, 115, 22, 0.2);
+    0 0 20px rgba(239, 68, 68, 0.7),
+    0 0 40px rgba(239, 68, 68, 0.4),
+    0 0 80px rgba(239, 68, 68, 0.2);
 }
 
 .ember-glow {
@@ -129,10 +129,10 @@ body {
 }
 
 .glass-fire {
-  background: rgba(249, 115, 22, 0.04);
+  background: rgba(239, 68, 68, 0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.15);
 }
 
 /* Gradient fire text */
@@ -270,7 +270,7 @@ select option {
    ========================================= */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(239,68,68,0.25), transparent);
 }
 
 /* =========================================
@@ -283,5 +283,5 @@ select option {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(249,115,22,0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(239,68,68,0.15);
 }
