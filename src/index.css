@@ -10,15 +10,15 @@
 
   /* ---------- Fire Palette ---------- */
   --color-fire-50:  #fff7ed;
-  --color-fire-100: #ffedd5;
-  --color-fire-200: #fed7aa;
-  --color-fire-300: #fdba74;
-  --color-fire-400: #fb923c;
-  --color-fire-500: #f97316;
-  --color-fire-600: #ea580c;
-  --color-fire-700: #c2410c;
-  --color-fire-800: #9a3412;
-  --color-fire-900: #7c2d12;
+  --color-fire-100: #fee2e2;
+  --color-fire-200: #fecaca;
+  --color-fire-300: #fca5a5;
+  --color-fire-400: #f87171;
+  --color-fire-500: #ef4444;
+  --color-fire-600: #dc2626;
+  --color-fire-700: #b91c1c;
+  --color-fire-800: #991b1b;
+  --color-fire-900: #7f1d1d;
 
   /* ---------- Ember / Red ---------- */
   --color-ember-300: #fca5a5;
@@ -84,8 +84,8 @@ body {
    ========================================= */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #0a0a0f; }
-::-webkit-scrollbar-thumb { background: #f97316; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #dc2626; }
 
 /* =========================================
    SELECTION
@@ -137,7 +137,7 @@ body {
 
 /* Gradient fire text */
 .gradient-fire {
-  background: linear-gradient(135deg, #fb923c 0%, #f97316 40%, #ef4444 100%);
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 40%, #dc2626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -171,7 +171,7 @@ body {
    FOCUS STYLES (Accessibility)
    ========================================= */
 :focus-visible {
-  outline: 2px solid #f97316;
+  outline: 2px solid #ef4444;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -185,7 +185,7 @@ body {
   left: 1rem;
   z-index: 9999;
   padding: 0.5rem 1rem;
-  background: #f97316;
+  background: #ef4444;
   color: #fff;
   font-weight: 700;
   font-size: 0.875rem;

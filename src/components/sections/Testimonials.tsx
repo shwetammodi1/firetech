@@ -34,7 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "We engaged Firetech for fire alarm and sprinkler installation across three of our hotels. The team was highly organized, completed the work well within deadline, and ensured minimal disruption to guests. Their post-installation support has been outstanding.",
     initials: 'PN',
-    color: 'bg-amber-500/20 text-amber-300',
+    color: 'bg-red-500/20 text-red-300',
   },
   {
     name: 'Dr. Anil Mehta',
@@ -84,7 +84,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`w-3.5 h-3.5 ${i < rating ? 'text-amber-400 fill-amber-400' : 'text-smoke-700'}`}
+          className={`w-3.5 h-3.5 ${i < rating ? 'text-red-400 fill-red-400' : 'text-smoke-700'}`}
         />
       ))}
     </div>

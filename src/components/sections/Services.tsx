@@ -43,7 +43,7 @@ const SERVICES: Service[] = [
     icon: Lightbulb,
     title: 'Emergency & Exit Lighting',
     desc:  'LED emergency lighting systems and illuminated exit signs ensuring safe evacuation during power failures.',
-    accent: 'bg-amber-500/15 border-amber-500/30',
+    accent: 'bg-red-500/15 border-red-500/30',
   },
   {
     icon: Wrench,
@@ -68,7 +68,7 @@ const SERVICES: Service[] = [
     icon: GraduationCap,
     title: 'Fire Safety Training',
     desc:  'Practical on-site training programs for staff on fire prevention, correct use of extinguishers, and emergency evacuation drills.',
-    accent: 'bg-amber-500/15 border-amber-500/30',
+    accent: 'bg-red-500/15 border-red-500/30',
   },
 ]
 

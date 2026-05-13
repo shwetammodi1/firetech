@@ -22,18 +22,18 @@ function Ember({ style }: { style: React.CSSProperties }) {
 }
 
 const EMBERS = [
-  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#f97316', '--dur': 3.5, '--delay': 0    },
+  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#ef4444', '--dur': 3.5, '--delay': 0    },
   { left: '20%',  bottom: '8%',  width: 6,  height: 6,  background: '#ef4444', '--dur': 4.2, '--delay': 0.4  },
-  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#fb923c', '--dur': 3.8, '--delay': 0.8  },
-  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#f97316', '--dur': 4.5, '--delay': 1.2  },
-  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#fbbf24', '--dur': 3.2, '--delay': 0.2  },
+  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#f87171', '--dur': 3.8, '--delay': 0.8  },
+  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#ef4444', '--dur': 4.5, '--delay': 1.2  },
+  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#ef4444', '--dur': 3.2, '--delay': 0.2  },
   { left: '75%',  bottom: '7%',  width: 6,  height: 6,  background: '#ef4444', '--dur': 4.0, '--delay': 0.6  },
-  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#fb923c', '--dur': 3.6, '--delay': 1.0  },
-  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#f97316', '--dur': 4.3, '--delay': 1.4  },
-  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#fbbf24', '--dur': 5.0, '--delay': 2.0  },
+  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#f87171', '--dur': 3.6, '--delay': 1.0  },
+  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#ef4444', '--dur': 4.3, '--delay': 1.4  },
+  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#ef4444', '--dur': 5.0, '--delay': 2.0  },
   { left: '42%',  bottom: '10%', width: 3,  height: 3,  background: '#ef4444', '--dur': 4.8, '--delay': 1.8  },
-  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#f97316', '--dur': 3.9, '--delay': 2.4  },
-  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#fb923c', '--dur': 4.1, '--delay': 0.9  },
+  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#ef4444', '--dur': 3.9, '--delay': 2.4  },
+  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#f87171', '--dur': 4.1, '--delay': 0.9  },
 ]
 
 const STATS = [

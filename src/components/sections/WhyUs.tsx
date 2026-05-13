@@ -23,8 +23,8 @@ const REASONS = [
     icon: Zap,
     title: 'Fast & Reliable Service',
     desc: 'Same-day emergency response with dedicated field engineers on standby across all service regions.',
-    accent: 'text-amber-400',
-    bg: 'bg-amber-500/10 border-amber-500/25',
+    accent: 'text-red-400',
+    bg: 'bg-red-500/10 border-red-500/25',
   },
   {
     icon: HeartHandshake,
@@ -51,8 +51,8 @@ const REASONS = [
     icon: Star,
     title: 'Proven Track Record',
     desc: '500+ satisfied clients across industries — manufacturing, hospitality, healthcare, education, and more.',
-    accent: 'text-amber-400',
-    bg: 'bg-amber-500/10 border-amber-500/25',
+    accent: 'text-red-400',
+    bg: 'bg-red-500/10 border-red-500/25',
   },
   {
     icon: Headphones,
