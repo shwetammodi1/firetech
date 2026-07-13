@@ -37,11 +37,11 @@ export default function About() {
       {/* Ambient glow */}
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-30"
-        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.08) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.08) 0%, transparent 70%)' }}
       />
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.07) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.07) 0%, transparent 70%)' }}
       />
 
       <Container>
@@ -103,7 +103,7 @@ export default function About() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="glass rounded-2xl p-6 border border-white/5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-400 group"
+                className="glass rounded-2xl p-6 border border-slate-900/5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-400 group"
               >
                 <div className="w-11 h-11 rounded-xl bg-fire-500/10 border border-fire-500/20 flex items-center justify-center mb-4 group-hover:bg-fire-500/20 group-hover:border-fire-500/40 transition-all duration-300">
                   <Icon className="w-5 h-5 text-fire-400 group-hover:text-fire-300 transition-colors duration-300" />

@@ -23,7 +23,7 @@ const ROW_B = [...CLIENTS.slice(6), ...CLIENTS.slice(0, 6), ...CLIENTS.slice(6),
 
 function ClientBadge({ name, abbr }: { name: string; abbr: string }) {
   return (
-    <div className="flex items-center gap-3 bg-dark-700/60 border border-white/[0.06] rounded-xl px-5 py-3 flex-shrink-0 mx-2 hover:border-fire-500/20 hover:bg-dark-700/80 transition-all duration-300 group">
+    <div className="flex items-center gap-3 bg-dark-700/60 border border-slate-900/[0.06] rounded-xl px-5 py-3 flex-shrink-0 mx-2 hover:border-fire-500/20 hover:bg-dark-700/80 transition-all duration-300 group">
       <div className="w-9 h-9 rounded-lg bg-fire-500/10 border border-fire-500/20 flex items-center justify-center text-fire-400 font-heading font-black text-xs flex-shrink-0 group-hover:bg-fire-500/20 transition-all duration-300">
         {abbr}
       </div>
@@ -62,11 +62,11 @@ export default function ClientLogos() {
         {/* Fade masks */}
         <div
           className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(90deg, #0a0a0f 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(90deg, #f8fafc 0%, transparent 100%)' }}
         />
         <div
           className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(270deg, #0a0a0f 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(270deg, #f8fafc 0%, transparent 100%)' }}
         />
         <div className="flex animate-marquee py-1">
           {ROW_A.map((c, i) => (
@@ -79,11 +79,11 @@ export default function ClientLogos() {
       <div className="relative overflow-hidden mt-3">
         <div
           className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(90deg, #0a0a0f 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(90deg, #f8fafc 0%, transparent 100%)' }}
         />
         <div
           className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(270deg, #0a0a0f 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(270deg, #f8fafc 0%, transparent 100%)' }}
         />
         <div className="flex animate-marquee-reverse py-1">
           {ROW_B.map((c, i) => (

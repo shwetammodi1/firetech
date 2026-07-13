@@ -57,8 +57,8 @@ export default function Navbar() {
         className={[
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'bg-dark-900/90 backdrop-blur-xl border-b border-fire-500/10 shadow-2xl shadow-black/60'
-            : 'bg-gradient-to-b from-dark-900/60 to-transparent backdrop-blur-sm',
+            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-900/8 shadow-lg shadow-slate-900/5'
+            : 'bg-white/70 backdrop-blur-md border-b border-transparent',
         ].join(' ')}
         role="navigation"
         aria-label="Main navigation"
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div
             className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
             style={{
-              background: 'linear-gradient(90deg, transparent 0%, rgba(239,68,68,0.5) 30%, rgba(239,68,68,0.8) 50%, rgba(239,68,68,0.5) 70%, transparent 100%)',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(37, 99, 235,0.5) 30%, rgba(37, 99, 235,0.8) 50%, rgba(37, 99, 235,0.5) 70%, transparent 100%)',
             }}
           />
         )}
@@ -94,7 +94,7 @@ export default function Navbar() {
 
               {/* Text mark */}
               <div className="flex flex-col leading-none select-none">
-                <span className="font-heading font-black text-[1.1rem] tracking-[0.2em] text-white group-hover:text-smoke-100 transition-colors duration-300">
+                <span className="font-heading font-black text-[1.1rem] tracking-[0.2em] text-smoke-100 group-hover:text-fire-500 transition-colors duration-300">
                   FIRETECH
                 </span>
                 <span className="text-[8px] tracking-[0.4em] text-fire-400/80 font-semibold uppercase mt-[3px] group-hover:text-fire-300 transition-colors duration-300">
@@ -118,7 +118,7 @@ export default function Navbar() {
                         'relative px-5 py-2.5 text-[0.8125rem] font-semibold tracking-wide transition-colors duration-300 group rounded-lg',
                         isActive
                           ? 'text-fire-400'
-                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-white/[0.04]',
+                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.04]',
                       ].join(' ')}
                     >
                       {label}
@@ -169,7 +169,7 @@ export default function Navbar() {
                   'transition-all duration-300 border',
                   isMenuOpen
                     ? 'bg-fire-500/15 border-fire-500/30 text-fire-400'
-                    : 'bg-white/[0.04] border-white/8 text-smoke-400 hover:text-smoke-100 hover:bg-white/[0.07] hover:border-white/15',
+                    : 'bg-slate-900/[0.04] border-slate-900/8 text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.07] hover:border-slate-900/15',
                 ].join(' ')}
                 onClick={() => setIsMenuOpen(prev => !prev)}
                 aria-expanded={isMenuOpen}
@@ -228,23 +228,23 @@ export default function Navbar() {
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               className="fixed top-0 right-0 bottom-0 z-50 w-[300px] md:hidden
                          bg-dark-900/98 backdrop-blur-xl
-                         border-l border-white/5
+                         border-l border-slate-900/5
                          flex flex-col overflow-y-auto"
             >
               {/* Drawer header */}
-              <div className="flex items-center justify-between px-5 py-5 border-b border-white/5">
+              <div className="flex items-center justify-between px-5 py-5 border-b border-slate-900/5">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-fire-500/10 border border-fire-500/25 flex items-center justify-center">
                     <Flame className="w-4 h-4 text-fire-500" />
                   </div>
                   <div className="flex flex-col leading-none">
-                    <span className="font-heading font-black text-sm tracking-[0.2em] text-white">FIRETECH</span>
+                    <span className="font-heading font-black text-sm tracking-[0.2em] text-smoke-100">FIRETECH</span>
                     <span className="text-[7px] tracking-[0.35em] text-fire-400/80 font-semibold uppercase mt-0.5">ENTERPRISES</span>
                   </div>
                 </div>
                 <button
                   onClick={closeMenu}
-                  className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:bg-white/[0.08] transition-all duration-200"
+                  className="w-8 h-8 rounded-lg bg-slate-900/[0.04] border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:bg-slate-900/[0.08] transition-all duration-200"
                   aria-label="Close menu"
                 >
                   <X className="w-4 h-4" />
@@ -268,7 +268,7 @@ export default function Navbar() {
                         'flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200',
                         isActive
                           ? 'text-fire-400 bg-fire-500/10 border border-fire-500/20'
-                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-white/[0.04] border border-transparent',
+                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.04] border border-transparent',
                       ].join(' ')}
                     >
                       <span>{label}</span>
@@ -282,7 +282,7 @@ export default function Navbar() {
               </nav>
 
               {/* Drawer footer CTA */}
-              <div className="px-4 py-5 border-t border-white/5 flex flex-col gap-3">
+              <div className="px-4 py-5 border-t border-slate-900/5 flex flex-col gap-3">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"

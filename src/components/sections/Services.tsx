@@ -78,7 +78,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
     <motion.article
       variants={fadeUp}
       custom={index}
-      className="relative glass rounded-2xl p-6 border border-white/5
+      className="relative glass rounded-2xl p-6 border border-slate-900/5
                  hover:border-fire-500/25 hover:bg-fire-500/[0.025]
                  transition-all duration-400 group cursor-default overflow-hidden
                  flex flex-col h-full"
@@ -99,7 +99,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       </div>
 
       {/* Content */}
-      <h3 className="font-heading font-bold text-smoke-100 text-base mb-2.5 leading-snug group-hover:text-white transition-colors duration-300">
+      <h3 className="font-heading font-bold text-smoke-100 text-base mb-2.5 leading-snug group-hover:text-fire-500 transition-colors duration-300">
         {title}
       </h3>
       <p className="text-smoke-500 text-sm leading-relaxed group-hover:text-smoke-400 transition-colors duration-300 flex-1">
@@ -118,7 +118,7 @@ export default function Services() {
       {/* Background ambients */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.04) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.04) 0%, transparent 65%)' }}
       />
 
       <Container>

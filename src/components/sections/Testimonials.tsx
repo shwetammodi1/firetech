@@ -116,7 +116,7 @@ export default function Testimonials() {
       {/* Ambient glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.05) 0%, transparent 65%)' }}
       />
 
       <Container size="lg">
@@ -144,13 +144,13 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="glass rounded-3xl border border-white/6 overflow-hidden mb-8">
+          <div className="glass rounded-3xl border border-slate-900/6 overflow-hidden mb-8">
             <div className="grid md:grid-cols-[1fr_2fr] gap-0">
 
               {/* Left sidebar */}
-              <div className="relative flex flex-col items-center justify-center p-6 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-white/5">
+              <div className="relative flex flex-col items-center justify-center p-6 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-slate-900/5">
                 {/* Avatar */}
-                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-heading font-black mb-4 border border-white/10 ${t.color}`}>
+                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-heading font-black mb-4 border border-slate-900/10 ${t.color}`}>
                   {t.initials}
                 </div>
                 <p className="font-heading font-bold text-smoke-100 text-base text-center">{t.name}</p>
@@ -162,7 +162,7 @@ export default function Testimonials() {
                 <div className="mt-3">
                   <StarRating rating={t.rating} />
                 </div>
-                <div className="mt-3 px-3 py-1 rounded-full bg-dark-600/60 border border-white/5 text-smoke-600 text-[10px] font-medium tracking-wide uppercase">
+                <div className="mt-3 px-3 py-1 rounded-full bg-dark-600/60 border border-slate-900/5 text-smoke-600 text-[10px] font-medium tracking-wide uppercase">
                   {t.industry}
                 </div>
               </div>
@@ -193,14 +193,14 @@ export default function Testimonials() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="w-10 h-10 rounded-full glass border border-white/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full glass border border-slate-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="w-10 h-10 rounded-full glass border border-white/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full glass border border-slate-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -247,7 +247,7 @@ export default function Testimonials() {
                 'w-10 h-10 rounded-xl flex items-center justify-center text-xs font-heading font-black border transition-all duration-300',
                 i === active
                   ? `${t.color} border-fire-500/40 scale-110 shadow-lg shadow-fire-900/30`
-                  : 'bg-dark-600/50 text-smoke-500 border-white/5 hover:border-fire-500/20',
+                  : 'bg-dark-600/50 text-smoke-500 border-slate-900/5 hover:border-fire-500/20',
               ].join(' ')}
             >
               {t.initials}

@@ -61,7 +61,7 @@ export default function Contact() {
   }
 
   const inputClass = [
-    'w-full bg-dark-700/60 border border-white/8 rounded-xl px-4 py-3 text-sm text-smoke-200',
+    'w-full bg-dark-700/60 border border-slate-900/8 rounded-xl px-4 py-3 text-sm text-smoke-200',
     'placeholder:text-smoke-700 focus:outline-none focus:border-fire-500/50 focus:bg-dark-700/80',
     'transition-all duration-300',
   ].join(' ')
@@ -71,7 +71,7 @@ export default function Contact() {
       {/* Ambient */}
       <div
         className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.09) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.09) 0%, transparent 65%)' }}
       />
 
       <Container>
@@ -121,7 +121,7 @@ export default function Contact() {
                 key={label}
                 variants={fadeUp}
                 href={href}
-                className="flex items-center gap-4 glass rounded-2xl border border-white/5 p-5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-300 group"
+                className="flex items-center gap-4 glass rounded-2xl border border-slate-900/5 p-5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-300 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-fire-500/10 border border-fire-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-fire-500/20 transition-all duration-300">
                   <Icon className="w-5 h-5 text-fire-400" />
@@ -141,7 +141,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65 }}
           >
-            <div className="glass rounded-3xl border border-white/6 p-5 sm:p-8">
+            <div className="glass rounded-3xl border border-slate-900/6 p-5 sm:p-8">
               {formState === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
                   <div className="w-16 h-16 rounded-2xl bg-fire-500/15 border border-fire-500/30 flex items-center justify-center">

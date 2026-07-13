@@ -104,7 +104,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="relative glass rounded-2xl p-6 border border-white/5
+      className="relative glass rounded-2xl p-6 border border-slate-900/5
                  hover:border-fire-500/25 hover:bg-fire-500/[0.025]
                  transition-all duration-400 group overflow-hidden
                  flex flex-col h-full"
@@ -132,7 +132,7 @@ function ProductCard({ product }: { product: Product }) {
       </span>
 
       {/* Name */}
-      <h3 className="font-heading font-bold text-smoke-100 text-base mb-2.5 leading-snug group-hover:text-white transition-colors duration-300">
+      <h3 className="font-heading font-bold text-smoke-100 text-base mb-2.5 leading-snug group-hover:text-fire-500 transition-colors duration-300">
         {name}
       </h3>
 
@@ -166,7 +166,7 @@ export default function Products() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 65%)',
+            'radial-gradient(circle, rgba(37, 99, 235,0.05) 0%, transparent 65%)',
         }}
       />
 

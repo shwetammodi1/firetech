@@ -1,55 +1,60 @@
 @import "tailwindcss";
 
 /* =========================================
-   FIRETECH ENTERPRISES � GLOBAL THEME
+   FIRETECH ENTERPRISES — GLOBAL THEME
+   Light · Professional · Blue & White
    ========================================= */
 @theme {
   /* ---------- Typography ---------- */
   --font-heading: "Montserrat", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  /* ---------- Fire Palette ---------- */
-  --color-fire-50:  #fff7ed;
-  --color-fire-100: #fee2e2;
-  --color-fire-200: #fecaca;
-  --color-fire-300: #fca5a5;
-  --color-fire-400: #f87171;
-  --color-fire-500: #ef4444;
-  --color-fire-600: #dc2626;
-  --color-fire-700: #b91c1c;
-  --color-fire-800: #991b1b;
-  --color-fire-900: #7f1d1d;
+  /* ---------- Brand Blue (accent) ----------
+     Mapped onto the legacy "fire" scale so every
+     existing fire-* / ember-* utility becomes blue. */
+  --color-fire-50:  #eff6ff;
+  --color-fire-100: #dbeafe;
+  --color-fire-200: #bfdbfe;
+  --color-fire-300: #3b82f6;
+  --color-fire-400: #2563eb;
+  --color-fire-500: #2563eb;
+  --color-fire-600: #1d4ed8;
+  --color-fire-700: #1e40af;
+  --color-fire-800: #1e3a8a;
+  --color-fire-900: #172554;
 
-  /* ---------- Ember / Red ---------- */
-  --color-ember-300: #fca5a5;
-  --color-ember-400: #f87171;
-  --color-ember-500: #ef4444;
-  --color-ember-600: #dc2626;
-  --color-ember-700: #b91c1c;
-  --color-ember-800: #991b1b;
-  --color-ember-900: #7f1d1d;
+  /* ---------- Ember → Blue accent ---------- */
+  --color-ember-300: #60a5fa;
+  --color-ember-400: #3b82f6;
+  --color-ember-500: #2563eb;
+  --color-ember-600: #1d4ed8;
+  --color-ember-700: #1e40af;
+  --color-ember-800: #1e3a8a;
+  --color-ember-900: #172554;
 
-  /* ---------- Dark Backgrounds ---------- */
-  --color-dark-950: #020203;
-  --color-dark-900: #050507;
-  --color-dark-800: #0a0a0f;
-  --color-dark-700: #0f0f18;
-  --color-dark-600: #141422;
-  --color-dark-500: #1a1a2e;
-  --color-dark-400: #252540;
-  --color-dark-300: #30305a;
+  /* ---------- Backgrounds (legacy "dark" → light) ---------- */
+  --color-dark-950: #f1f5f9;  /* footer / deepest section */
+  --color-dark-900: #ffffff;  /* page base / hero */
+  --color-dark-800: #f8fafc;  /* alt section */
+  --color-dark-700: #f1f5f9;  /* alt section 2 */
+  --color-dark-600: #e2e8f0;
+  --color-dark-500: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-300: #64748b;
 
-  /* ---------- Smoke / Neutral ---------- */
-  --color-smoke-50:  #fafafa;
-  --color-smoke-100: #f5f5f5;
-  --color-smoke-200: #e5e5e5;
-  --color-smoke-300: #d4d4d4;
-  --color-smoke-400: #a3a3a3;
-  --color-smoke-500: #737373;
-  --color-smoke-600: #525252;
-  --color-smoke-700: #404040;
-  --color-smoke-800: #262626;
-  --color-smoke-900: #171717;
+  /* ---------- Text scale (legacy "smoke" → inverted) ----------
+     smoke-100 = primary heading text (darkest),
+     ascending numbers get lighter/more muted. */
+  --color-smoke-50:  #ffffff;
+  --color-smoke-100: #0f172a;
+  --color-smoke-200: #1e293b;
+  --color-smoke-300: #334155;
+  --color-smoke-400: #475569;
+  --color-smoke-500: #64748b;
+  --color-smoke-600: #6b7280;
+  --color-smoke-700: #94a3b8;
+  --color-smoke-800: #cbd5e1;
+  --color-smoke-900: #e2e8f0;
 }
 
 /* =========================================
@@ -71,8 +76,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #050507;
-  color: #f5f5f5;
+  background-color: #ffffff;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -82,62 +87,59 @@ body {
 /* =========================================
    CUSTOM SCROLLBAR
    ========================================= */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0a0a0f; }
-::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
 
 /* =========================================
    SELECTION
    ========================================= */
 ::selection {
-  background: rgba(239, 68, 68, 0.35);
-  color: #fff;
+  background: rgba(37, 99, 235, 0.18);
+  color: #0f172a;
 }
 
 /* =========================================
    UTILITY CLASSES
    ========================================= */
 
-/* Fire glow effects */
+/* Soft blue glow / elevation for light surfaces */
 .fire-glow {
   box-shadow:
-    0 0 20px rgba(239, 68, 68, 0.5),
-    0 0 40px rgba(239, 68, 68, 0.25),
-    0 0 80px rgba(239, 68, 68, 0.1);
+    0 10px 30px rgba(37, 99, 235, 0.18),
+    0 4px 12px rgba(37, 99, 235, 0.10);
 }
 
 .fire-text-glow {
-  text-shadow:
-    0 0 20px rgba(239, 68, 68, 0.7),
-    0 0 40px rgba(239, 68, 68, 0.4),
-    0 0 80px rgba(239, 68, 68, 0.2);
+  text-shadow: 0 1px 2px rgba(37, 99, 235, 0.15);
 }
 
 .ember-glow {
   box-shadow:
-    0 0 20px rgba(239, 68, 68, 0.5),
-    0 0 40px rgba(239, 68, 68, 0.2);
+    0 8px 24px rgba(37, 99, 235, 0.15),
+    0 2px 8px rgba(37, 99, 235, 0.08);
 }
 
-/* Glassmorphism */
+/* Cards — light glass / elevated white */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
 .glass-fire {
-  background: rgba(239, 68, 68, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(239, 68, 68, 0.15);
+  background: rgba(37, 99, 235, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(37, 99, 235, 0.18);
 }
 
-/* Gradient fire text */
+/* Gradient brand-blue text */
 .gradient-fire {
-  background: linear-gradient(135deg, #f87171 0%, #ef4444 40%, #dc2626 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 45%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -171,7 +173,7 @@ body {
    FOCUS STYLES (Accessibility)
    ========================================= */
 :focus-visible {
-  outline: 2px solid #ef4444;
+  outline: 2px solid #2563eb;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -185,7 +187,7 @@ body {
   left: 1rem;
   z-index: 9999;
   padding: 0.5rem 1rem;
-  background: #ef4444;
+  background: #2563eb;
   color: #fff;
   font-weight: 700;
   font-size: 0.875rem;
@@ -286,8 +288,8 @@ input, textarea, select, button {
 }
 
 select option {
-  background: #0a0a0f;
-  color: #f5f5f5;
+  background: #ffffff;
+  color: #0f172a;
 }
 
 /* =========================================
@@ -295,7 +297,7 @@ select option {
    ========================================= */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(239,68,68,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.25), transparent);
 }
 
 /* =========================================
@@ -308,5 +310,5 @@ select option {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(239,68,68,0.15);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.12), 0 0 0 1px rgba(37,99,235,0.15);
 }

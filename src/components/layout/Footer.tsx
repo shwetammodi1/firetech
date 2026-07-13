@@ -30,14 +30,14 @@ const SOCIAL = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-dark-950 border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-dark-950 border-t border-slate-900/5 overflow-hidden">
       {/* Top fire line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fire-500/40 to-transparent" />
 
       {/* Ambient */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(239,68,68,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(37, 99, 235,0.05) 0%, transparent 70%)' }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +53,7 @@ export default function Footer() {
                 <span className="absolute inset-0 rounded-full bg-fire-500/20 blur-md" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-heading font-black text-lg tracking-[0.18em] text-white">FIRETECH</span>
+                <span className="font-heading font-black text-lg tracking-[0.18em] text-smoke-100">FIRETECH</span>
                 <span className="text-[9px] tracking-[0.35em] text-fire-400 font-semibold uppercase mt-0.5">ENTERPRISES</span>
               </div>
             </a>
@@ -71,7 +71,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl glass border border-white/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+                  className="w-9 h-9 rounded-xl glass border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -159,7 +159,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 border-t border-slate-900/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-smoke-700 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} Firetech Enterprises. All rights reserved.
             {' '}·{' '}
@@ -171,7 +171,7 @@ export default function Footer() {
             <a
               href="#home"
               aria-label="Back to top"
-              className="w-8 h-8 rounded-xl glass border border-white/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+              className="w-8 h-8 rounded-xl glass border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
             >
               <ArrowUp className="w-4 h-4" />
             </a>

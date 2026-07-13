@@ -22,18 +22,18 @@ function Ember({ style }: { style: React.CSSProperties }) {
 }
 
 const EMBERS = [
-  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#ef4444', '--dur': 3.5, '--delay': 0    },
-  { left: '20%',  bottom: '8%',  width: 6,  height: 6,  background: '#ef4444', '--dur': 4.2, '--delay': 0.4  },
-  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#f87171', '--dur': 3.8, '--delay': 0.8  },
-  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#ef4444', '--dur': 4.5, '--delay': 1.2  },
-  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#ef4444', '--dur': 3.2, '--delay': 0.2  },
-  { left: '75%',  bottom: '7%',  width: 6,  height: 6,  background: '#ef4444', '--dur': 4.0, '--delay': 0.6  },
-  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#f87171', '--dur': 3.6, '--delay': 1.0  },
-  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#ef4444', '--dur': 4.3, '--delay': 1.4  },
-  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#ef4444', '--dur': 5.0, '--delay': 2.0  },
-  { left: '42%',  bottom: '10%', width: 3,  height: 3,  background: '#ef4444', '--dur': 4.8, '--delay': 1.8  },
-  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#ef4444', '--dur': 3.9, '--delay': 2.4  },
-  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#f87171', '--dur': 4.1, '--delay': 0.9  },
+  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#2563eb', '--dur': 3.5, '--delay': 0    },
+  { left: '20%',  bottom: '8%',  width: 6,  height: 6,  background: '#2563eb', '--dur': 4.2, '--delay': 0.4  },
+  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#60a5fa', '--dur': 3.8, '--delay': 0.8  },
+  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#2563eb', '--dur': 4.5, '--delay': 1.2  },
+  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#2563eb', '--dur': 3.2, '--delay': 0.2  },
+  { left: '75%',  bottom: '7%',  width: 6,  height: 6,  background: '#2563eb', '--dur': 4.0, '--delay': 0.6  },
+  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#60a5fa', '--dur': 3.6, '--delay': 1.0  },
+  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#2563eb', '--dur': 4.3, '--delay': 1.4  },
+  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#2563eb', '--dur': 5.0, '--delay': 2.0  },
+  { left: '42%',  bottom: '10%', width: 3,  height: 3,  background: '#2563eb', '--dur': 4.8, '--delay': 1.8  },
+  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#2563eb', '--dur': 3.9, '--delay': 2.4  },
+  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#60a5fa', '--dur': 4.1, '--delay': 0.9  },
 ]
 
 const STATS = [
@@ -62,7 +62,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 50% at 50% 110%, rgba(239,68,68,0.22) 0%, rgba(220,38,38,0.1) 40%, transparent 70%)',
+            'radial-gradient(ellipse 80% 50% at 50% 110%, rgba(37, 99, 235,0.22) 0%, rgba(29, 78, 216,0.1) 40%, transparent 70%)',
         }}
       />
 
@@ -71,7 +71,7 @@ export default function Hero() {
         className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(37, 99, 235,0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -80,7 +80,7 @@ export default function Hero() {
         className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(37, 99, 235,0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -89,7 +89,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(239,68,68,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.6) 1px, transparent 1px)',
+            'linear-gradient(rgba(37, 99, 235,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235,0.6) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -104,7 +104,7 @@ export default function Hero() {
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(5,5,7,0.9) 0%, transparent 100%)',
+            'linear-gradient(to top, rgba(255,255,255,0.95) 0%, transparent 100%)',
         }}
       />
 
@@ -206,13 +206,13 @@ export default function Hero() {
           >
             {STATS.map(({ icon: Icon, value, label }, idx) => (
               <div key={label} className="flex items-center gap-0">
-                <div className="flex flex-col items-center px-6 py-4 glass rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-white/5 hover:border-fire-500/20 transition-all duration-300 hover:bg-fire-500/5 group w-full sm:min-w-[140px]">
+                <div className="flex flex-col items-center px-6 py-4 glass rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-slate-900/5 hover:border-fire-500/20 transition-all duration-300 hover:bg-fire-500/5 group w-full sm:min-w-[140px]">
                   <Icon className="w-6 h-6 text-fire-500 mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-heading font-black text-2xl text-smoke-100 gradient-fire">{value}</span>
                   <span className="text-smoke-500 text-xs mt-0.5 font-medium tracking-wide">{label}</span>
                 </div>
                 {idx < STATS.length - 1 && (
-                  <div className="hidden sm:block w-px h-16 bg-white/5" />
+                  <div className="hidden sm:block w-px h-16 bg-slate-900/5" />
                 )}
               </div>
             ))}
