@@ -141,6 +141,15 @@ export default function Hero() {
             </h1>
           </motion.div>
 
+          {/* ── Brand tagline ── */}
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.6 }}
+            className="font-heading font-bold text-white text-xl sm:text-2xl md:text-3xl tracking-wide drop-shadow-lg -mt-2"
+          >
+            All Fire Solutions <span className="text-fire-400">Under One Roof</span>
+          </motion.p>
+
           {/* ── Tagline ── */}
           <motion.p
             variants={fadeUp}

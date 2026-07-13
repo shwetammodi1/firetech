@@ -1,6 +1,7 @@
 import Hero              from '../components/sections/Hero'
-import StatsCounter      from '../components/sections/StatsCounter'
+import CertStrip         from '../components/sections/CertStrip'
 import About             from '../components/sections/About'
+import StatsCounter      from '../components/sections/StatsCounter'
 import WhyUs             from '../components/sections/WhyUs'
 import Products          from '../components/sections/Products'
 import FreeServiceBanner from '../components/sections/FreeServiceBanner'
@@ -11,8 +12,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <StatsCounter />
+      <CertStrip />
       <About />
+      <StatsCounter />
       <WhyUs />
       <Products />
       <FreeServiceBanner />

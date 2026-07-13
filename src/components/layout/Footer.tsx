@@ -156,8 +156,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Firetech Enterprises. All Rights Reserved. · ISO 9001:2015 Certified
           </p>
           <div className="flex items-center gap-5">
-            <Link to="/contact" className="text-neutral-500 hover:text-white text-xs transition-colors">Privacy Policy</Link>
-            <Link to="/contact" className="text-neutral-500 hover:text-white text-xs transition-colors">Terms &amp; Conditions</Link>
+            <Link to="/privacy" className="text-neutral-500 hover:text-white text-xs transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-neutral-500 hover:text-white text-xs transition-colors">Terms &amp; Conditions</Link>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"

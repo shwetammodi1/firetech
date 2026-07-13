@@ -7,6 +7,8 @@ import ProductsPage from './pages/ProductsPage'
 import CertificatesPage from './pages/CertificatesPage'
 import BlogsPage from './pages/BlogsPage'
 import ContactPage from './pages/ContactPage'
+import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
 import './App.css'
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path="/certificates" element={<CertificatesPage />} />
           <Route path="/blogs"        element={<BlogsPage />} />
           <Route path="/contact"      element={<ContactPage />} />
+          <Route path="/privacy"      element={<PrivacyPage />} />
+          <Route path="/terms"        element={<TermsPage />} />
           <Route path="*"             element={<Home />} />
         </Routes>
       </Layout>
