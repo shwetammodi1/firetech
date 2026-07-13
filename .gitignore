@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Lockfile intentionally not committed: floating WASM-fallback transitive
+# deps (@emnapi/*, rolldown/tailwind wasm bindings) resolve to different
+# versions per-platform, breaking `npm ci`. CI/CF fall back to `npm install`.
+package-lock.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
