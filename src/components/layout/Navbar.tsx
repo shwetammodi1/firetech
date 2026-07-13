@@ -5,9 +5,9 @@ import { Flame, Menu, X, MessageCircle, ChevronRight } from 'lucide-react'
 const navLinks = [
   { label: 'Home',         href: '#home' },
   { label: 'About',        href: '#about' },
+  { label: 'Products',     href: '#products' },
   { label: 'Services',     href: '#services' },
   { label: 'Why Us',       href: '#why-us' },
-  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact',      href: '#contact' },
 ]
 
