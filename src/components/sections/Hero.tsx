@@ -22,18 +22,18 @@ function Ember({ style }: { style: React.CSSProperties }) {
 }
 
 const EMBERS = [
-  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#2563eb', '--dur': 3.5, '--delay': 0    },
-  { left: '20%',  bottom: '8%',  width: 6,  height: 6,  background: '#2563eb', '--dur': 4.2, '--delay': 0.4  },
-  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#60a5fa', '--dur': 3.8, '--delay': 0.8  },
-  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#2563eb', '--dur': 4.5, '--delay': 1.2  },
-  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#2563eb', '--dur': 3.2, '--delay': 0.2  },
-  { left: '75%',  bottom: '7%',  width: 6,  height: 6,  background: '#2563eb', '--dur': 4.0, '--delay': 0.6  },
-  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#60a5fa', '--dur': 3.6, '--delay': 1.0  },
-  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#2563eb', '--dur': 4.3, '--delay': 1.4  },
-  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#2563eb', '--dur': 5.0, '--delay': 2.0  },
-  { left: '42%',  bottom: '10%', width: 3,  height: 3,  background: '#2563eb', '--dur': 4.8, '--delay': 1.8  },
-  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#2563eb', '--dur': 3.9, '--delay': 2.4  },
-  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#60a5fa', '--dur': 4.1, '--delay': 0.9  },
+  { left: '10%',  bottom: '5%',  width: 4,  height: 4,  background: '#fbbf24', '--dur': 3.5, '--delay': 0    },
+  { left: '20%',  bottom: '8%',  width: 6,  height: 6,  background: '#f59e0b', '--dur': 4.2, '--delay': 0.4  },
+  { left: '35%',  bottom: '3%',  width: 3,  height: 3,  background: '#fcd34d', '--dur': 3.8, '--delay': 0.8  },
+  { left: '50%',  bottom: '6%',  width: 5,  height: 5,  background: '#f59e0b', '--dur': 4.5, '--delay': 1.2  },
+  { left: '62%',  bottom: '4%',  width: 4,  height: 4,  background: '#fbbf24', '--dur': 3.2, '--delay': 0.2  },
+  { left: '75%',  bottom: '7%',  width: 6,  height: 6,  background: '#f59e0b', '--dur': 4.0, '--delay': 0.6  },
+  { left: '85%',  bottom: '5%',  width: 3,  height: 3,  background: '#fcd34d', '--dur': 3.6, '--delay': 1.0  },
+  { left: '93%',  bottom: '9%',  width: 5,  height: 5,  background: '#f59e0b', '--dur': 4.3, '--delay': 1.4  },
+  { left: '5%',   bottom: '12%', width: 4,  height: 4,  background: '#fbbf24', '--dur': 5.0, '--delay': 2.0  },
+  { left: '42%',  bottom: '10%', width: 3,  height: 3,  background: '#f59e0b', '--dur': 4.8, '--delay': 1.8  },
+  { left: '58%',  bottom: '14%', width: 5,  height: 5,  background: '#fcd34d', '--dur': 3.9, '--delay': 2.4  },
+  { left: '28%',  bottom: '2%',  width: 4,  height: 4,  background: '#fbbf24', '--dur': 4.1, '--delay': 0.9  },
 ]
 
 const STATS = [
@@ -54,43 +54,38 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* ── Dark layered background ── */}
-      <div className="absolute inset-0 bg-dark-900" />
+      {/* ── Cinematic background photograph ── */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: 'url(/images/hero-fire.jpg)' }}
+      />
 
-      {/* ── Radial fire glow from bottom-center ── */}
+      {/* ── Deep navy gradient overlay for legibility ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 50% at 50% 110%, rgba(37, 99, 235,0.22) 0%, rgba(29, 78, 216,0.1) 40%, transparent 70%)',
+            'linear-gradient(180deg, rgba(2,6,23,0.82) 0%, rgba(2,6,23,0.60) 38%, rgba(15,23,42,0.80) 78%, rgba(255,255,255,0) 100%)',
         }}
       />
 
-      {/* ── Top-left ambient ── */}
+      {/* ── Brand blue tint ── */}
       <div
-        className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(37, 99, 235,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse 100% 60% at 50% 38%, rgba(37,99,235,0.30) 0%, transparent 68%)',
+          mixBlendMode: 'soft-light',
         }}
       />
 
-      {/* ── Top-right ambient ── */}
+      {/* ── Subtle grid overlay ── */}
       <div
-        className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(37, 99, 235,0.06) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* ── Grid overlay ── */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(37, 99, 235,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235,0.6) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
         }}
       />
 
@@ -99,12 +94,12 @@ export default function Hero() {
         <Ember key={i} style={e as React.CSSProperties} />
       ))}
 
-      {/* ── Bottom fire gradient fade ── */}
+      {/* ── Bottom fade into the light page body ── */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(255,255,255,0.95) 0%, transparent 100%)',
+            'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)',
         }}
       />
 
@@ -120,7 +115,7 @@ export default function Hero() {
         >
           {/* ── ISO badge pill ── */}
           <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 glass-fire rounded-full px-5 py-2 text-xs font-semibold tracking-widest text-fire-400 uppercase border border-fire-500/20">
+            <div className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold tracking-widest text-sky-200 uppercase border border-white/20 bg-white/10 backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5" />
               ISO 9001:2015 Certified · Trusted Since 2009
             </div>
@@ -128,12 +123,18 @@ export default function Hero() {
 
           {/* ── Main headline ── */}
           <motion.div variants={fadeUp} transition={{ duration: 0.7 }}>
-            <h1 className="font-heading font-black leading-[1.0] tracking-tight">
-              <span className="block text-smoke-100 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="font-heading font-black leading-[1.0] tracking-tight drop-shadow-2xl">
+              <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
                 FIRETECH
               </span>
               <span
-                className="block gradient-fire fire-text-glow text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1"
+                className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1"
+                style={{
+                  background: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 45%, #3b82f6 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
               >
                 ENTERPRISES
               </span>
@@ -144,12 +145,12 @@ export default function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="text-smoke-400 text-base sm:text-lg md:text-xl max-w-2xl font-body font-light leading-relaxed"
+            className="text-slate-200 text-base sm:text-lg md:text-xl max-w-2xl font-body font-light leading-relaxed drop-shadow-lg"
           >
             India's trusted partner for{' '}
-            <span className="text-fire-400 font-medium">Fire Safety</span>,{' '}
-            <span className="text-fire-400 font-medium">AMC Services</span>, and{' '}
-            <span className="text-fire-400 font-medium">Fire Fighting Systems</span>.
+            <span className="text-sky-300 font-medium">Fire Safety</span>,{' '}
+            <span className="text-sky-300 font-medium">AMC Services</span>, and{' '}
+            <span className="text-sky-300 font-medium">Fire Fighting Systems</span>.
             Protecting lives and property with premium-grade solutions.
           </motion.p>
 
@@ -157,7 +158,7 @@ export default function Hero() {
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.5 }}
-            className="w-24 h-px bg-gradient-to-r from-transparent via-fire-500 to-transparent"
+            className="w-24 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent"
           />
 
           {/* ── CTA buttons ── */}
@@ -171,7 +172,7 @@ export default function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm sm:text-base px-8 py-4 rounded-full transition-all duration-300 overflow-hidden shadow-xl shadow-fire-900/50 hover:shadow-fire-500/30 hover:-translate-y-1 active:scale-95"
+              className="group relative inline-flex items-center gap-3 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm sm:text-base px-8 py-4 rounded-full transition-all duration-300 overflow-hidden shadow-xl shadow-blue-900/50 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95"
             >
               {/* shimmer sweep */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -182,9 +183,9 @@ export default function Hero() {
             {/* Secondary — Call */}
             <a
               href={PHONE_URL}
-              className="group inline-flex items-center gap-3 glass-fire hover:bg-fire-900/30 text-smoke-100 font-heading font-semibold text-sm sm:text-base px-8 py-4 rounded-full border border-fire-500/30 hover:border-fire-500/60 transition-all duration-300 hover:-translate-y-1 active:scale-95"
+              className="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white font-heading font-semibold text-sm sm:text-base px-8 py-4 rounded-full border border-white/25 hover:border-white/50 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 active:scale-95"
             >
-              <Phone className="w-5 h-5 text-fire-400 group-hover:text-fire-300 transition-colors flex-shrink-0" />
+              <Phone className="w-5 h-5 text-sky-300 group-hover:text-sky-200 transition-colors flex-shrink-0" />
               Call Us Now
             </a>
           </motion.div>
@@ -193,7 +194,7 @@ export default function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.5 }}
-            className="text-smoke-600 text-xs tracking-wide mt-1"
+            className="text-slate-300 text-xs tracking-wide mt-1"
           >
             ✓ Free site inspection &nbsp;·&nbsp; ✓ Same-day response &nbsp;·&nbsp; ✓ Pan-India service
           </motion.p>
@@ -206,13 +207,13 @@ export default function Hero() {
           >
             {STATS.map(({ icon: Icon, value, label }, idx) => (
               <div key={label} className="flex items-center gap-0">
-                <div className="flex flex-col items-center px-6 py-4 glass rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-slate-900/5 hover:border-fire-500/20 transition-all duration-300 hover:bg-fire-500/5 group w-full sm:min-w-[140px]">
-                  <Icon className="w-6 h-6 text-fire-500 mb-2 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-heading font-black text-2xl text-smoke-100 gradient-fire">{value}</span>
-                  <span className="text-smoke-500 text-xs mt-0.5 font-medium tracking-wide">{label}</span>
+                <div className="flex flex-col items-center px-6 py-4 bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-white/15 hover:border-sky-400/40 transition-all duration-300 hover:bg-white/15 group w-full sm:min-w-[140px]">
+                  <Icon className="w-6 h-6 text-sky-300 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-heading font-black text-2xl text-white">{value}</span>
+                  <span className="text-slate-300 text-xs mt-0.5 font-medium tracking-wide">{label}</span>
                 </div>
                 {idx < STATS.length - 1 && (
-                  <div className="hidden sm:block w-px h-16 bg-slate-900/5" />
+                  <div className="hidden sm:block w-px h-16 bg-white/15" />
                 )}
               </div>
             ))}
@@ -223,7 +224,7 @@ export default function Hero() {
       {/* ── Scroll indicator ── */}
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-smoke-600 hover:text-fire-400 transition-colors duration-300 group"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-300 hover:text-white transition-colors duration-300 group z-10"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         aria-label="Scroll to About section"

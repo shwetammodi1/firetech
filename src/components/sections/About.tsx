@@ -36,18 +36,48 @@ export default function About() {
     <section id="about" className="relative section-padding bg-dark-800 overflow-hidden">
       {/* Ambient glow */}
       <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-30"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.08) 0%, transparent 70%)' }}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.07) 0%, transparent 70%)' }}
+        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-40"
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.10) 0%, transparent 70%)' }}
       />
 
       <Container>
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
 
-          {/* ── Left: text content ── */}
+          {/* ── Left: image with floating badge ── */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            {/* Decorative blue frame */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-fire-500/60 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-fire-500/60 rounded-br-3xl pointer-events-none" />
+
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/20 ring-1 ring-slate-900/10">
+              <img
+                src="/images/technician.jpg"
+                alt="Firetech certified engineer installing a fire safety system"
+                className="w-full h-[340px] sm:h-[420px] object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+            </div>
+
+            {/* Floating stat badge */}
+            <div className="absolute -bottom-6 left-6 sm:left-8 bg-white rounded-2xl shadow-xl shadow-slate-900/15 border border-slate-900/5 px-5 py-4 flex items-center gap-3">
+              <div className="w-11 h-11 rounded-xl bg-fire-500 flex items-center justify-center flex-shrink-0">
+                <Award className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <p className="font-heading font-black text-xl text-smoke-100 leading-none">15+ Years</p>
+                <p className="text-smoke-500 text-xs mt-1">of trusted fire safety expertise</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── Right: text content ── */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -68,7 +98,7 @@ export default function About() {
               <strong className="text-smoke-200 font-semibold">Firetech Enterprises</strong> is
               a leading fire safety solutions provider based in India, delivering world-class
               fire-protection equipment, systems, and maintenance services since{' '}
-              <span className="text-fire-400 font-medium">2009</span>.
+              <span className="text-fire-500 font-semibold">2009</span>.
             </motion.p>
 
             <motion.p
@@ -84,37 +114,36 @@ export default function About() {
             <motion.a
               variants={fadeUp}
               href="#contact"
-              className="inline-flex items-center gap-2 text-fire-400 font-semibold text-sm border-b border-fire-500/40 hover:border-fire-500 pb-0.5 transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-fire-500 font-semibold text-sm border-b-2 border-fire-500/40 hover:border-fire-500 pb-0.5 transition-colors duration-300 group"
             >
               Talk to our experts
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
             </motion.a>
           </motion.div>
-
-          {/* ── Right: pillar cards grid ── */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          >
-            {PILLARS.map(({ icon: Icon, title, desc }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                className="glass rounded-2xl p-6 border border-slate-900/5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-400 group"
-              >
-                <div className="w-11 h-11 rounded-xl bg-fire-500/10 border border-fire-500/20 flex items-center justify-center mb-4 group-hover:bg-fire-500/20 group-hover:border-fire-500/40 transition-all duration-300">
-                  <Icon className="w-5 h-5 text-fire-400 group-hover:text-fire-300 transition-colors duration-300" />
-                </div>
-                <h3 className="font-heading font-bold text-smoke-100 text-sm mb-1.5">{title}</h3>
-                <p className="text-smoke-500 text-xs leading-relaxed">{desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
         </div>
+
+        {/* ── Pillar cards row ── */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+        >
+          {PILLARS.map(({ icon: Icon, title, desc }) => (
+            <motion.div
+              key={title}
+              variants={fadeUp}
+              className="glass card-hover rounded-2xl p-6 border border-slate-900/5 group"
+            >
+              <div className="w-11 h-11 rounded-xl bg-fire-500/10 border border-fire-500/20 flex items-center justify-center mb-4 group-hover:bg-fire-500 group-hover:border-fire-500 transition-all duration-300">
+                <Icon className="w-5 h-5 text-fire-500 group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="font-heading font-bold text-smoke-100 text-sm mb-1.5">{title}</h3>
+              <p className="text-smoke-500 text-xs leading-relaxed">{desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </Container>
     </section>
   )
