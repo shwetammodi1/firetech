@@ -222,38 +222,9 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-
-            {/* Counter */}
-            <p className="text-smoke-600 text-xs font-medium tabular-nums">
-              {String(active + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-            </p>
           </div>
         </motion.div>
 
-        {/* Mini avatar strip */}
-        <motion.div
-          className="mt-10 flex flex-wrap justify-center gap-3"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {TESTIMONIALS.map((t, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              title={t.name}
-              className={[
-                'w-10 h-10 rounded-xl flex items-center justify-center text-xs font-heading font-black border transition-all duration-300',
-                i === active
-                  ? `${t.color} border-fire-500/40 scale-110 shadow-lg shadow-fire-900/30`
-                  : 'bg-dark-600/50 text-smoke-500 border-neutral-900/5 hover:border-fire-500/20',
-              ].join(' ')}
-            >
-              {t.initials}
-            </button>
-          ))}
-        </motion.div>
       </Container>
     </section>
   )

@@ -3,33 +3,29 @@ import SectionHeader from '../ui/SectionHeader'
 import Container from '../layout/Container'
 
 const CLIENTS = [
-  { name: 'Tata Group',          abbr: 'TG' },
-  { name: 'Reliance Industries', abbr: 'RI' },
-  { name: 'HDFC Bank',           abbr: 'HB' },
-  { name: 'Infosys Ltd.',        abbr: 'IN' },
-  { name: 'Wipro',               abbr: 'WI' },
-  { name: 'L&T Infrastructure',  abbr: 'LT' },
-  { name: 'Adani Group',         abbr: 'AG' },
-  { name: 'Bajaj Auto',          abbr: 'BA' },
-  { name: 'Mahindra & Mahindra', abbr: 'MM' },
-  { name: 'ONGC',                abbr: 'OC' },
-  { name: 'Bharat Petroleum',    abbr: 'BP' },
-  { name: 'Coal India',          abbr: 'CI' },
+  { name: 'Indian Oil',       logo: '/images/logos/indianoil.png' },
+  { name: 'Bharat Petroleum', logo: '/images/logos/bpcl.png' },
+  { name: 'NTPC',             logo: '/images/logos/ntpc.png' },
+  { name: 'Adani Group',      logo: '/images/logos/adani.png' },
+  { name: 'HDFC Bank',        logo: '/images/logos/hdfc.png' },
+  { name: 'State Bank',       logo: '/images/logos/sbi.png' },
+  { name: 'Infosys',          logo: '/images/logos/infosys.png' },
+  { name: 'Wipro',            logo: '/images/logos/wipro.png' },
 ]
 
 /* Duplicate for seamless infinite loop */
 const ROW_A = [...CLIENTS, ...CLIENTS]
-const ROW_B = [...CLIENTS.slice(6), ...CLIENTS.slice(0, 6), ...CLIENTS.slice(6), ...CLIENTS.slice(0, 6)]
+const ROW_B = [...CLIENTS.slice(4), ...CLIENTS.slice(0, 4), ...CLIENTS.slice(4), ...CLIENTS.slice(0, 4)]
 
-function ClientBadge({ name, abbr }: { name: string; abbr: string }) {
+function LogoCard({ name, logo }: { name: string; logo: string }) {
   return (
-    <div className="flex items-center gap-3 bg-dark-700/60 border border-neutral-900/[0.06] rounded-xl px-5 py-3 flex-shrink-0 mx-2 hover:border-fire-500/20 hover:bg-dark-700/80 transition-all duration-300 group">
-      <div className="w-9 h-9 rounded-lg bg-fire-500/10 border border-fire-500/20 flex items-center justify-center text-fire-400 font-heading font-black text-xs flex-shrink-0 group-hover:bg-fire-500/20 transition-all duration-300">
-        {abbr}
-      </div>
-      <span className="text-smoke-400 text-sm font-medium whitespace-nowrap group-hover:text-smoke-300 transition-colors duration-300">
-        {name}
-      </span>
+    <div className="flex items-center justify-center bg-white border border-neutral-200 rounded-2xl px-8 py-5 flex-shrink-0 mx-2.5 h-24 w-52 shadow-sm hover:shadow-md hover:border-fire-500/30 transition-all duration-300 group">
+      <img
+        src={logo}
+        alt={name}
+        loading="lazy"
+        className="max-h-12 max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-400"
+      />
     </div>
   )
 }
@@ -59,35 +55,22 @@ export default function ClientLogos() {
 
       {/* Row 1 — left to right */}
       <div className="relative overflow-hidden mt-6">
-        {/* Fade masks */}
-        <div
-          className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(90deg, #f8fafc 0%, transparent 100%)' }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(270deg, #f8fafc 0%, transparent 100%)' }}
-        />
-        <div className="flex animate-marquee py-1">
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 z-10 pointer-events-none" style={{ background: 'linear-gradient(90deg, #fafafa 0%, transparent 100%)' }} />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 z-10 pointer-events-none" style={{ background: 'linear-gradient(270deg, #fafafa 0%, transparent 100%)' }} />
+        <div className="flex animate-marquee py-2">
           {ROW_A.map((c, i) => (
-            <ClientBadge key={`a-${i}`} name={c.name} abbr={c.abbr} />
+            <LogoCard key={`a-${i}`} name={c.name} logo={c.logo} />
           ))}
         </div>
       </div>
 
       {/* Row 2 — right to left */}
-      <div className="relative overflow-hidden mt-3">
-        <div
-          className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(90deg, #f8fafc 0%, transparent 100%)' }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(270deg, #f8fafc 0%, transparent 100%)' }}
-        />
-        <div className="flex animate-marquee-reverse py-1">
+      <div className="relative overflow-hidden mt-4">
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 z-10 pointer-events-none" style={{ background: 'linear-gradient(90deg, #fafafa 0%, transparent 100%)' }} />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 z-10 pointer-events-none" style={{ background: 'linear-gradient(270deg, #fafafa 0%, transparent 100%)' }} />
+        <div className="flex animate-marquee-reverse py-2">
           {ROW_B.map((c, i) => (
-            <ClientBadge key={`b-${i}`} name={c.name} abbr={c.abbr} />
+            <LogoCard key={`b-${i}`} name={c.name} logo={c.logo} />
           ))}
         </div>
       </div>
