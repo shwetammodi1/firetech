@@ -37,7 +37,7 @@ export default function About() {
       {/* Ambient glow */}
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-40"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.10) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.10) 0%, transparent 70%)' }}
       />
 
       <Container>
@@ -59,7 +59,7 @@ export default function About() {
               <img
                 src="/images/technician.jpg"
                 alt="Firetech certified engineer installing a fire safety system"
-                className="w-full h-[340px] sm:h-[420px] object-cover"
+                className="w-full h-[340px] sm:h-[420px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
@@ -113,7 +113,7 @@ export default function About() {
             {/* CTA */}
             <motion.a
               variants={fadeUp}
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 text-fire-500 font-semibold text-sm border-b-2 border-fire-500/40 hover:border-fire-500 pb-0.5 transition-colors duration-300 group"
             >
               Talk to our experts

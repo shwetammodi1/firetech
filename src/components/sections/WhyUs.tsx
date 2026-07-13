@@ -23,8 +23,8 @@ const REASONS = [
     icon: Zap,
     title: 'Fast & Reliable Service',
     desc: 'Same-day emergency response with dedicated field engineers on standby across all service regions.',
-    accent: 'text-red-400',
-    bg: 'bg-red-500/10 border-red-500/25',
+    accent: 'text-neutral-400',
+    bg: 'bg-neutral-500/10 border-neutral-500/25',
   },
   {
     icon: HeartHandshake,
@@ -37,8 +37,8 @@ const REASONS = [
     icon: Banknote,
     title: 'Transparent Pricing',
     desc: 'No hidden costs. Clear quotations, fair pricing, and flexible AMC plans tailored to your budget.',
-    accent: 'text-emerald-400',
-    bg: 'bg-emerald-500/10 border-emerald-500/25',
+    accent: 'text-neutral-400',
+    bg: 'bg-neutral-500/10 border-neutral-500/25',
   },
   {
     icon: ShieldCheck,
@@ -51,8 +51,8 @@ const REASONS = [
     icon: Star,
     title: 'Proven Track Record',
     desc: '500+ satisfied clients across industries — manufacturing, hospitality, healthcare, education, and more.',
-    accent: 'text-red-400',
-    bg: 'bg-red-500/10 border-red-500/25',
+    accent: 'text-neutral-400',
+    bg: 'bg-neutral-500/10 border-neutral-500/25',
   },
   {
     icon: Headphones,
@@ -65,8 +65,8 @@ const REASONS = [
     icon: ThumbsUp,
     title: 'Experienced Team',
     desc: 'Our engineers hold national certifications with 15+ years of hands-on field experience across all system types.',
-    accent: 'text-sky-400',
-    bg: 'bg-sky-500/10 border-sky-500/25',
+    accent: 'text-neutral-400',
+    bg: 'bg-neutral-500/10 border-neutral-500/25',
   },
 ]
 
@@ -76,12 +76,12 @@ export default function WhyUs() {
       {/* Top-right ambient */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.1) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.1) 0%, transparent 65%)' }}
       />
       {/* Bottom-left ambient */}
       <div
         className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.08) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.08) 0%, transparent 65%)' }}
       />
 
       <Container>

@@ -1,180 +1,171 @@
-import { Flame, MessageCircle, Phone, Mail, MapPin, Globe, Share2, Rss, ArrowUp } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Flame, Phone, Mail, MapPin, MessageCircle, Globe, Share2, Rss, Send, ArrowUp } from 'lucide-react'
 
 const WHATSAPP_URL = 'https://wa.me/918964005455'
 
-const NAV_LINKS = [
-  { label: 'Home',         href: '#home' },
-  { label: 'About Us',     href: '#about' },
-  { label: 'Services',     href: '#services' },
-  { label: 'Why Choose Us', href: '#why-us' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact',      href: '#contact' },
+const QUICK_LINKS = [
+  { label: 'Home',         to: '/' },
+  { label: 'About Us',     to: '/about' },
+  { label: 'Products',     to: '/products' },
+  { label: 'Certificates', to: '/certificates' },
+  { label: 'Blogs',        to: '/blogs' },
+  { label: 'Contact Us',   to: '/contact' },
 ]
 
-const SERVICE_LINKS = [
-  'Fire Extinguisher Supply & Refilling',
-  'Fire Fighting Systems',
-  'Fire Alarm Systems',
-  'Annual Maintenance Contract',
-  'Fire Safety Audit',
-  'Emergency & Exit Lighting',
-  'Fire Equipment Supply',
-  'Fire Safety Training',
+const PRODUCT_LINKS = [
+  { label: 'Fire Extinguishers',  to: '/products#extinguishers' },
+  { label: 'Fire Hydrant System', to: '/products#hydrant' },
+  { label: 'Fire Alarm Systems',  to: '/products#alarm' },
+  { label: 'Suppression Systems', to: '/products#suppression' },
+  { label: 'Safety Products',     to: '/products#safety' },
 ]
 
 const SOCIAL = [
-  { icon: Globe,  href: '#', label: 'Website' },
-  { icon: Share2, href: '#', label: 'Social' },
-  { icon: Rss,    href: '#', label: 'Updates' },
+  { icon: Globe,         href: '#',          label: 'Website' },
+  { icon: Share2,        href: '#',          label: 'Social' },
+  { icon: Rss,           href: '#',          label: 'Updates' },
+  { icon: MessageCircle, href: WHATSAPP_URL, label: 'WhatsApp' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="relative bg-dark-950 border-t border-slate-900/5 overflow-hidden">
-      {/* Top fire line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fire-500/40 to-transparent" />
-
-      {/* Ambient */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(37, 99, 235,0.05) 0%, transparent 70%)' }}
-      />
+    <footer className="relative bg-neutral-950 text-neutral-400 overflow-hidden">
+      {/* Top hairline */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* ── Main grid ── */}
-        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
 
-          {/* Column 1: Brand */}
-          <div className="lg:col-span-1 flex flex-col gap-5">
-            <a href="#home" className="flex items-center gap-2.5 group w-fit">
-              <div className="relative">
-                <Flame className="w-8 h-8 text-fire-500" />
-                <span className="absolute inset-0 rounded-full bg-fire-500/20 blur-md" />
+          {/* Brand */}
+          <div className="lg:col-span-4 flex flex-col gap-5">
+            <Link to="/" className="flex items-center gap-2.5 w-fit">
+              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
+                <Flame className="w-5 h-5 text-neutral-950" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-heading font-black text-lg tracking-[0.18em] text-smoke-100">FIRETECH</span>
-                <span className="text-[9px] tracking-[0.35em] text-fire-400 font-semibold uppercase mt-0.5">ENTERPRISES</span>
+                <span className="font-heading font-black text-lg tracking-[0.18em] text-white">FIRETECH</span>
+                <span className="text-[9px] tracking-[0.35em] text-neutral-500 font-semibold uppercase mt-0.5">ENTERPRISES</span>
               </div>
-            </a>
+            </Link>
 
-            <p className="text-smoke-600 text-sm leading-relaxed">
-              India's trusted ISO 9001:2015 certified fire safety partner. Protecting lives and property since 2009.
+            <p className="text-sm leading-relaxed max-w-xs">
+              Ensure fire safety, save life & property. India's trusted ISO 9001:2015 certified fire
+              safety partner — protecting lives and property since 2009.
             </p>
 
-            {/* Social links */}
-            <div className="flex items-center gap-2">
-              {SOCIAL.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl glass border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
-
-            {/* ISO badge */}
-            <div className="inline-flex items-center gap-2 glass-fire rounded-xl px-4 py-2.5 border border-fire-500/20 w-fit">
-              <div className="w-8 h-8 rounded-lg bg-fire-500/20 border border-fire-500/30 flex items-center justify-center">
-                <Flame className="w-4 h-4 text-fire-400" />
-              </div>
-              <div>
-                <p className="text-fire-300 text-xs font-bold leading-none">ISO 9001:2015</p>
-                <p className="text-smoke-600 text-[10px] mt-0.5">Quality Certified</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2: Navigation */}
-          <div>
-            <h3 className="font-heading font-bold text-smoke-200 text-sm uppercase tracking-widest mb-5">
-              Quick Links
-            </h3>
-            <ul className="flex flex-col gap-2.5">
-              {NAV_LINKS.map(({ label, href }) => (
-                <li key={href}>
+            {/* Social */}
+            <div>
+              <p className="text-white text-xs font-bold uppercase tracking-widest mb-3">Stay Connected</p>
+              <div className="flex items-center gap-2.5">
+                {SOCIAL.map(({ icon: Icon, href, label }) => (
                   <a
+                    key={label}
                     href={href}
-                    className="text-smoke-600 hover:text-fire-400 text-sm transition-colors duration-300 flex items-center gap-1.5 group"
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-neutral-950 hover:bg-white hover:border-white transition-all duration-300"
                   >
-                    <span className="w-0 group-hover:w-3 h-px bg-fire-500 transition-all duration-300 rounded-full" />
-                    {label}
+                    <Icon className="w-4 h-4" />
                   </a>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Column 3: Services */}
-          <div>
-            <h3 className="font-heading font-bold text-smoke-200 text-sm uppercase tracking-widest mb-5">
-              Our Services
-            </h3>
-            <ul className="flex flex-col gap-2.5">
-              {SERVICE_LINKS.map((s) => (
-                <li key={s}>
-                  <a
-                    href="#services"
-                    className="text-smoke-600 hover:text-fire-400 text-sm leading-snug transition-colors duration-300 flex items-start gap-1.5 group"
-                  >
-                    <span className="w-0 group-hover:w-3 mt-1.5 h-px bg-fire-500 transition-all duration-300 rounded-full flex-shrink-0" />
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Contact info */}
-          <div>
-            <h3 className="font-heading font-bold text-smoke-200 text-sm uppercase tracking-widest mb-5">
-              Contact Us
-            </h3>
-            <ul className="flex flex-col gap-4">
-              {[
-                { icon: Phone,   label: '+91 89640 05455',           href: 'tel:+918964005455' },
-                { icon: MessageCircle, label: 'Chat on WhatsApp',    href: WHATSAPP_URL },
-                { icon: Mail,    label: 'mohtmhs@gmail.com', href: 'mailto:mohtmhs@gmail.com' },
-                { icon: MapPin,  label: '296, Shubham Green\'s CAT Road, Indore, MP', href: '#' },
-              ].map(({ icon: Icon, label, href }) => (
+          {/* Quick links */}
+          <div className="lg:col-span-2">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-5">Quick Links</h3>
+            <ul className="flex flex-col gap-3">
+              {QUICK_LINKS.map(({ label, to }) => (
                 <li key={label}>
-                  <a
-                    href={href}
-                    target={href.startsWith('http') ? '_blank' : undefined}
-                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-start gap-2.5 text-smoke-600 hover:text-smoke-300 text-sm transition-colors duration-300 group"
-                  >
-                    <Icon className="w-4 h-4 text-fire-500/70 flex-shrink-0 mt-0.5 group-hover:text-fire-400 transition-colors duration-300" />
+                  <Link to={to} className="text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                    <span className="w-0 group-hover:w-3 h-px bg-white transition-all duration-300" />
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Products */}
+          <div className="lg:col-span-3">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-5">Our Products</h3>
+            <ul className="flex flex-col gap-3">
+              {PRODUCT_LINKS.map(({ label, to }) => (
+                <li key={label}>
+                  <Link to={to} className="text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                    <span className="w-0 group-hover:w-3 h-px bg-white transition-all duration-300" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact + newsletter */}
+          <div className="lg:col-span-3">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-5">Get in Touch</h3>
+            <ul className="flex flex-col gap-3.5 mb-6">
+              <li>
+                <a href="tel:+918964005455" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" /> +91 89640 05455
+                </a>
+              </li>
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                  <MessageCircle className="w-4 h-4 mt-0.5 flex-shrink-0" /> Chat on WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="mailto:mohtmhs@gmail.com" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" /> mohtmhs@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" /> 296, Shubham Green's, CAT Road, Indore, MP
+              </li>
+            </ul>
+
+            {/* Newsletter */}
+            <form
+              onSubmit={(e) => { e.preventDefault(); window.open(WHATSAPP_URL, '_blank') }}
+              className="flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 p-1 focus-within:border-neutral-600 transition-colors"
+            >
+              <input
+                type="email"
+                required
+                placeholder="Your email"
+                aria-label="Email for newsletter"
+                className="flex-1 bg-transparent text-sm text-white placeholder:text-neutral-500 px-3 py-2 focus:outline-none min-w-0"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                className="w-9 h-9 rounded-full bg-white text-neutral-950 flex items-center justify-center hover:bg-neutral-200 transition-colors flex-shrink-0"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
           </div>
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="py-6 border-t border-slate-900/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-smoke-700 text-xs text-center sm:text-left">
-            © {new Date().getFullYear()} Firetech Enterprises. All rights reserved.
-            {' '}·{' '}
-            <span className="text-fire-600">ISO 9001:2015 Certified</span>
+        <div className="py-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-neutral-500 text-xs text-center sm:text-left">
+            © {new Date().getFullYear()} Firetech Enterprises. All Rights Reserved. · ISO 9001:2015 Certified
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-smoke-700 text-xs">Designed with ❤️ for safety</span>
-            {/* Scroll to top */}
-            <a
-              href="#home"
+          <div className="flex items-center gap-5">
+            <Link to="/contact" className="text-neutral-500 hover:text-white text-xs transition-colors">Privacy Policy</Link>
+            <Link to="/contact" className="text-neutral-500 hover:text-white text-xs transition-colors">Terms &amp; Conditions</Link>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"
-              className="w-8 h-8 rounded-xl glass border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+              className="w-8 h-8 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-neutral-950 hover:bg-white hover:border-white transition-all duration-300"
             >
               <ArrowUp className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

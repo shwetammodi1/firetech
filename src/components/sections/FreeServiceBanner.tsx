@@ -9,7 +9,7 @@ export default function FreeServiceBanner() {
     <section className="relative overflow-hidden">
       {/* Background photograph */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center grayscale"
         style={{ backgroundImage: 'url(/images/firefighter.jpg)' }}
       />
       {/* Navy gradient overlay */}
@@ -17,7 +17,7 @@ export default function FreeServiceBanner() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(15,23,42,0.85) 45%, rgba(37,99,235,0.55) 100%)',
+            'linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(15,23,42,0.85) 45%, rgba(23, 23, 23,0.55) 100%)',
         }}
       />
 
@@ -32,8 +32,8 @@ export default function FreeServiceBanner() {
           {/* Left: text */}
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 bg-white/10 border border-white/20 backdrop-blur-md mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-              <span className="text-sky-200 text-xs font-bold tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse" />
+              <span className="text-neutral-200 text-xs font-bold tracking-widest uppercase">
                 Limited Time Offer
               </span>
             </div>
@@ -41,7 +41,7 @@ export default function FreeServiceBanner() {
               Get Your{' '}
               <span
                 style={{
-                  background: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%)',
+                  background: 'linear-gradient(135deg, #ffffff 0%, #cfcfcf 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -63,14 +63,14 @@ export default function FreeServiceBanner() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm sm:text-base px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-blue-900/50 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95 whitespace-nowrap"
+              className="group inline-flex items-center gap-2.5 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm sm:text-base px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-neutral-900/50 hover:shadow-neutral-500/40 hover:-translate-y-1 active:scale-95 whitespace-nowrap"
             >
               <MessageCircle className="w-5 h-5" />
               Claim Free Audit
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <p className="flex items-center justify-center gap-1.5 text-slate-400 text-xs mt-3">
-              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" />
+              <ShieldCheck className="w-3.5 h-3.5 text-neutral-400" />
               No spam · Same-day response
             </p>
           </div>

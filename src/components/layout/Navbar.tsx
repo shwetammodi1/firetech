@@ -1,52 +1,51 @@
 import { useState, useEffect } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Flame, Menu, X, MessageCircle, ChevronRight } from 'lucide-react'
+import { Flame, Menu, X, ChevronDown, ChevronRight, MessageCircle } from 'lucide-react'
 
-const navLinks = [
-  { label: 'Home',         href: '#home' },
-  { label: 'About',        href: '#about' },
-  { label: 'Products',     href: '#products' },
-  { label: 'Services',     href: '#services' },
-  { label: 'Why Us',       href: '#why-us' },
-  { label: 'Contact',      href: '#contact' },
+const WHATSAPP_URL = 'https://wa.me/918964005455'
+
+const PRODUCT_CATEGORIES = [
+  { label: 'Fire Extinguishers',   to: '/products#extinguishers' },
+  { label: 'Fire Hydrant System',  to: '/products#hydrant' },
+  { label: 'Fire Alarm Systems',   to: '/products#alarm' },
+  { label: 'Suppression Systems',  to: '/products#suppression' },
+  { label: 'Safety Products',      to: '/products#safety' },
 ]
 
-const SECTION_IDS = navLinks.map(l => l.href.replace('#', ''))
-const WHATSAPP_URL = 'https://wa.me/918964005455'
+const NAV_LINKS = [
+  { label: 'Home',         to: '/' },
+  { label: 'About Us',     to: '/about' },
+  { label: 'Products',     to: '/products', dropdown: PRODUCT_CATEGORIES },
+  { label: 'Certificates', to: '/certificates' },
+  { label: 'Blogs',        to: '/blogs' },
+  { label: 'Contact Us',   to: '/contact' },
+]
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled,   setScrolled]   = useState(false)
-  const [activeId,   setActiveId]   = useState('home')
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const observers: IntersectionObserver[] = []
-    SECTION_IDS.forEach(id => {
-      const el = document.getElementById(id)
-      if (!el) return
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveId(id) },
-        { rootMargin: '-50% 0px -45% 0px', threshold: 0 }
-      )
-      obs.observe(el)
-      observers.push(obs)
-    })
-    return () => observers.forEach(o => o.disconnect())
-  }, [])
+    setIsMenuOpen(false)
+    setMobileProductsOpen(false)
+  }, [location.pathname])
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [isMenuOpen])
-
-  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <>
@@ -55,247 +54,201 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={[
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-900/8 shadow-lg shadow-slate-900/5'
-            : 'bg-white/70 backdrop-blur-md border-b border-transparent',
+            ? 'bg-white/95 backdrop-blur-xl border-b border-neutral-200 shadow-sm'
+            : 'bg-white/80 backdrop-blur-md border-b border-neutral-100',
         ].join(' ')}
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* Soft orange glow bottom border — visible when scrolled */}
-        {scrolled && (
-          <div
-            className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
-            style={{
-              background: 'linear-gradient(90deg, transparent 0%, rgba(37, 99, 235,0.5) 30%, rgba(37, 99, 235,0.8) 50%, rgba(37, 99, 235,0.5) 70%, transparent 100%)',
-            }}
-          />
-        )}
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[68px] md:h-[76px]">
+          <div className="flex items-center justify-between h-[64px] md:h-[76px]">
 
             {/* ── Logo ── */}
-            <a
-              href="#home"
-              onClick={closeMenu}
-              className="flex items-center gap-3 group flex-shrink-0"
-              aria-label="Firetech Enterprises — Home"
-            >
-              {/* Icon wrapper with glow ring */}
-              <div className="relative flex-shrink-0">
-                <div className="w-9 h-9 rounded-xl bg-fire-500/10 border border-fire-500/25 flex items-center justify-center group-hover:bg-fire-500/20 group-hover:border-fire-500/50 transition-all duration-300">
-                  <Flame className="w-5 h-5 text-fire-500 group-hover:text-fire-400 transition-colors duration-300" />
-                </div>
-                {/* Subtle glow blob */}
-                <div className="absolute inset-0 rounded-xl bg-fire-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <Link to="/" className="flex items-center gap-3 group flex-shrink-0" aria-label="Firetech Enterprises — Home">
+              <div className="w-9 h-9 rounded-lg bg-neutral-900 flex items-center justify-center group-hover:bg-black transition-colors duration-300">
+                <Flame className="w-5 h-5 text-white" />
               </div>
-
-              {/* Text mark */}
               <div className="flex flex-col leading-none select-none">
-                <span className="font-heading font-black text-[1.1rem] tracking-[0.2em] text-smoke-100 group-hover:text-fire-500 transition-colors duration-300">
+                <span className="font-heading font-black text-[1.05rem] tracking-[0.18em] text-neutral-900">
                   FIRETECH
                 </span>
-                <span className="text-[8px] tracking-[0.4em] text-fire-400/80 font-semibold uppercase mt-[3px] group-hover:text-fire-300 transition-colors duration-300">
+                <span className="text-[8px] tracking-[0.38em] text-neutral-500 font-semibold uppercase mt-[3px]">
                   ENTERPRISES
                 </span>
               </div>
-            </a>
+            </Link>
 
-            {/* ── Desktop nav — absolutely centered ── */}
-            <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
-              <div className="flex items-center gap-2">
-                {navLinks.map(({ label, href }) => {
-                  const id = href.replace('#', '')
-                  const isActive = activeId === id
-                  return (
-                    <a
-                      key={href}
-                      href={href}
-                      aria-current={isActive ? 'page' : undefined}
-                      className={[
-                        'relative px-5 py-2.5 text-[0.8125rem] font-semibold tracking-wide transition-colors duration-300 group rounded-lg',
-                        isActive
-                          ? 'text-fire-400'
-                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.04]',
+            {/* ── Desktop nav ── */}
+            <div className="hidden lg:flex items-center gap-1">
+              {NAV_LINKS.map((link) => (
+                link.dropdown ? (
+                  <div key={link.to} className="relative group">
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) => [
+                        'flex items-center gap-1 px-4 py-2.5 text-[0.82rem] font-semibold tracking-wide rounded-md transition-colors duration-200',
+                        isActive ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900',
                       ].join(' ')}
                     >
-                      {label}
-                      {/* Animated underline */}
-                      <span
-                        className={[
-                          'absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] rounded-full transition-all duration-300',
-                          'bg-gradient-to-r from-fire-500 to-ember-500',
-                          isActive ? 'w-5' : 'w-0 group-hover:w-5',
-                        ].join(' ')}
-                      />
-                      {/* Active dot */}
-                      {isActive && (
-                        <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-fire-500" />
-                      )}
-                    </a>
-                  )
-                })}
-              </div>
+                      {link.label}
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                    </NavLink>
+                    {/* Dropdown */}
+                    <div className="absolute top-full left-0 pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                      <div className="w-60 bg-white rounded-xl shadow-xl border border-neutral-200 overflow-hidden py-2">
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.to}
+                            className="flex items-center justify-between px-4 py-2.5 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors duration-150 group/item"
+                          >
+                            {item.label}
+                            <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    end={link.to === '/'}
+                    className={({ isActive }) => [
+                      'px-4 py-2.5 text-[0.82rem] font-semibold tracking-wide rounded-md transition-colors duration-200',
+                      isActive ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900',
+                    ].join(' ')}
+                  >
+                    {link.label}
+                  </NavLink>
+                )
+              ))}
             </div>
 
-            {/* ── Right side: CTA + hamburger ── */}
+            {/* ── Right: CTA + hamburger ── */}
             <div className="flex items-center gap-3 flex-shrink-0">
-
-              {/* Desktop CTA */}
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-2 relative overflow-hidden group
-                           bg-fire-500 hover:bg-fire-400 text-white
-                           text-[0.8125rem] font-bold tracking-wide
-                           px-5 py-2.5 rounded-full
-                           transition-all duration-300
-                           shadow-lg shadow-fire-900/40 hover:shadow-fire-500/30
-                           hover:-translate-y-0.5 active:scale-95 active:translate-y-0"
+                className="hidden sm:inline-flex items-center gap-2 bg-neutral-900 hover:bg-black text-white text-[0.8rem] font-bold tracking-wide px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
               >
-                {/* Shimmer sweep */}
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                <MessageCircle className="w-3.5 h-3.5 flex-shrink-0 relative z-10" />
-                <span className="relative z-10">Get a Quote</span>
+                <MessageCircle className="w-3.5 h-3.5" />
+                Get a Quote
               </a>
 
-              {/* Mobile hamburger */}
               <button
                 className={[
-                  'md:hidden relative w-10 h-10 rounded-xl flex items-center justify-center',
-                  'transition-all duration-300 border',
+                  'lg:hidden relative w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300',
                   isMenuOpen
-                    ? 'bg-fire-500/15 border-fire-500/30 text-fire-400'
-                    : 'bg-slate-900/[0.04] border-slate-900/8 text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.07] hover:border-slate-900/15',
+                    ? 'bg-neutral-900 border-neutral-900 text-white'
+                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50',
                 ].join(' ')}
                 onClick={() => setIsMenuOpen(prev => !prev)}
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               >
-                <AnimatePresence mode="wait" initial={false}>
-                  {isMenuOpen ? (
-                    <motion.span
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X className="w-5 h-5" />
-                    </motion.span>
-                  ) : (
-                    <motion.span
-                      key="open"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Menu className="w-5 h-5" />
-                    </motion.span>
-                  )}
-                </AnimatePresence>
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
         </div>
       </motion.nav>
 
-      {/* ── Mobile menu overlay + panel ── */}
+      {/* ── Mobile menu ── */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
-              onClick={closeMenu}
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+              onClick={() => setIsMenuOpen(false)}
             />
-
-            {/* Side drawer */}
             <motion.div
               key="drawer"
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] md:hidden
-                         bg-dark-900/98 backdrop-blur-xl
-                         border-l border-slate-900/5
-                         flex flex-col overflow-y-auto"
+              initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 32 }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] lg:hidden bg-white flex flex-col overflow-y-auto shadow-2xl"
             >
-              {/* Drawer header */}
-              <div className="flex items-center justify-between px-5 py-5 border-b border-slate-900/5">
+              <div className="flex items-center justify-between px-5 py-5 border-b border-neutral-100">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-fire-500/10 border border-fire-500/25 flex items-center justify-center">
-                    <Flame className="w-4 h-4 text-fire-500" />
+                  <div className="w-8 h-8 rounded-lg bg-neutral-900 flex items-center justify-center">
+                    <Flame className="w-4 h-4 text-white" />
                   </div>
-                  <div className="flex flex-col leading-none">
-                    <span className="font-heading font-black text-sm tracking-[0.2em] text-smoke-100">FIRETECH</span>
-                    <span className="text-[7px] tracking-[0.35em] text-fire-400/80 font-semibold uppercase mt-0.5">ENTERPRISES</span>
-                  </div>
+                  <span className="font-heading font-black text-sm tracking-[0.18em] text-neutral-900">FIRETECH</span>
                 </div>
                 <button
-                  onClick={closeMenu}
-                  className="w-8 h-8 rounded-lg bg-slate-900/[0.04] border border-slate-900/8 flex items-center justify-center text-smoke-500 hover:text-smoke-200 hover:bg-slate-900/[0.08] transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* Nav links */}
-              <nav className="flex flex-col px-4 py-4 gap-1 flex-1">
-                {navLinks.map(({ label, href }, i) => {
-                  const isActive = activeId === href.replace('#', '')
-                  return (
-                    <motion.a
-                      key={href}
-                      href={href}
-                      onClick={closeMenu}
-                      aria-current={isActive ? 'page' : undefined}
-                      initial={{ opacity: 0, x: 24 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 + 0.1, duration: 0.3 }}
-                      className={[
-                        'flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200',
-                        isActive
-                          ? 'text-fire-400 bg-fire-500/10 border border-fire-500/20'
-                          : 'text-smoke-400 hover:text-smoke-100 hover:bg-slate-900/[0.04] border border-transparent',
+              <nav className="flex flex-col px-4 py-4 gap-0.5 flex-1">
+                {NAV_LINKS.map((link) => (
+                  link.dropdown ? (
+                    <div key={link.to}>
+                      <button
+                        onClick={() => setMobileProductsOpen(o => !o)}
+                        className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-semibold text-neutral-700 hover:bg-neutral-50 transition-colors"
+                      >
+                        {link.label}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileProductsOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileProductsOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden pl-4"
+                          >
+                            {link.dropdown.map((item) => (
+                              <Link
+                                key={item.label}
+                                to={item.to}
+                                className="block px-4 py-2.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      end={link.to === '/'}
+                      className={({ isActive }) => [
+                        'px-4 py-3 rounded-lg text-sm font-semibold transition-colors',
+                        isActive ? 'text-white bg-neutral-900' : 'text-neutral-700 hover:bg-neutral-50',
                       ].join(' ')}
                     >
-                      <span>{label}</span>
-                      <ChevronRight className={[
-                        'w-4 h-4 transition-all duration-200',
-                        isActive ? 'text-fire-500 opacity-100' : 'opacity-0 group-hover:opacity-60',
-                      ].join(' ')} />
-                    </motion.a>
+                      {link.label}
+                    </NavLink>
                   )
-                })}
+                ))}
               </nav>
 
-              {/* Drawer footer CTA */}
-              <div className="px-4 py-5 border-t border-slate-900/5 flex flex-col gap-3">
+              <div className="px-4 py-5 border-t border-neutral-100">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={closeMenu}
-                  className="flex items-center justify-center gap-2.5 bg-fire-500 hover:bg-fire-400 text-white font-heading font-bold text-sm px-5 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-fire-900/40"
+                  className="flex items-center justify-center gap-2.5 bg-neutral-900 hover:bg-black text-white font-heading font-bold text-sm px-5 py-3.5 rounded-xl transition-colors duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Get a Quote on WhatsApp
                 </a>
-                <p className="text-smoke-700 text-[11px] text-center">
-                  Fast response · ISO Certified · Pan-India
-                </p>
               </div>
             </motion.div>
           </>

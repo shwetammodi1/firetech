@@ -16,37 +16,37 @@ const CERTS = [
     code: 'ISI',
     sub: 'Marked',
     label: 'Bureau of Indian Standards',
-    gradient: 'from-sky-400 to-sky-600',
-    border: 'border-sky-500/40',
-    bg: 'bg-sky-500/10',
-    text: 'text-sky-400',
+    gradient: 'from-neutral-400 to-neutral-600',
+    border: 'border-neutral-500/40',
+    bg: 'bg-neutral-500/10',
+    text: 'text-neutral-400',
   },
   {
     code: 'BIS',
     sub: 'Certified',
     label: 'India Standard Mark',
-    gradient: 'from-emerald-400 to-emerald-600',
-    border: 'border-emerald-500/40',
-    bg: 'bg-emerald-500/10',
-    text: 'text-emerald-400',
+    gradient: 'from-neutral-400 to-neutral-600',
+    border: 'border-neutral-500/40',
+    bg: 'bg-neutral-500/10',
+    text: 'text-neutral-400',
   },
   {
     code: 'MSME',
     sub: 'Registered',
     label: 'Govt. of India',
-    gradient: 'from-purple-400 to-purple-600',
-    border: 'border-purple-500/40',
-    bg: 'bg-purple-500/10',
-    text: 'text-purple-400',
+    gradient: 'from-neutral-400 to-neutral-600',
+    border: 'border-neutral-500/40',
+    bg: 'bg-neutral-500/10',
+    text: 'text-neutral-400',
   },
   {
     code: 'CE',
     sub: 'Certified',
     label: 'European Compliance',
-    gradient: 'from-blue-400 to-blue-600',
-    border: 'border-blue-500/40',
-    bg: 'bg-blue-500/10',
-    text: 'text-blue-400',
+    gradient: 'from-neutral-400 to-neutral-600',
+    border: 'border-neutral-500/40',
+    bg: 'bg-neutral-500/10',
+    text: 'text-neutral-400',
   },
 ]
 
@@ -67,7 +67,7 @@ export default function ISOBadge() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(135deg, rgba(37, 99, 235,0.04) 0%, transparent 50%, rgba(37, 99, 235,0.03) 100%)',
+            'linear-gradient(135deg, rgba(23, 23, 23,0.04) 0%, transparent 50%, rgba(23, 23, 23,0.03) 100%)',
         }}
       />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fire-500/30 to-transparent" />

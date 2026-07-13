@@ -34,7 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "We engaged Firetech for fire alarm and sprinkler installation across three of our hotels. The team was highly organized, completed the work well within deadline, and ensured minimal disruption to guests. Their post-installation support has been outstanding.",
     initials: 'PN',
-    color: 'bg-red-500/20 text-red-300',
+    color: 'bg-neutral-500/20 text-neutral-300',
   },
   {
     name: 'Dr. Anil Mehta',
@@ -44,7 +44,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: 'For a hospital, fire safety is not optional — it\'s critical. Firetech understood this from day one. They designed a comprehensive fire protection system that met all NBC and NABH requirements. Highly recommended for healthcare facilities.',
     initials: 'AM',
-    color: 'bg-sky-500/20 text-sky-300',
+    color: 'bg-neutral-500/20 text-neutral-300',
   },
   {
     name: 'Kavya Reddy',
@@ -54,7 +54,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "From the first site audit to the final fire drill training for our staff, Firetech was exemplary. They're not just equipment suppliers — they're genuine safety partners. Our entire school is now fully compliant and our staff feel confident in emergencies.",
     initials: 'KR',
-    color: 'bg-emerald-500/20 text-emerald-300',
+    color: 'bg-neutral-500/20 text-neutral-300',
   },
   {
     name: 'Suresh Patel',
@@ -74,7 +74,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "We needed to achieve fire NOC for our new office building on a tight timeline. Firetech's team worked weekends and late evenings to get our system installed and certified in time. Exceptional dedication and zero compromise on quality.",
     initials: 'MJ',
-    color: 'bg-purple-500/20 text-purple-300',
+    color: 'bg-neutral-500/20 text-neutral-300',
   },
 ]
 
@@ -84,7 +84,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`w-3.5 h-3.5 ${i < rating ? 'text-red-400 fill-red-400' : 'text-smoke-700'}`}
+          className={`w-3.5 h-3.5 ${i < rating ? 'text-neutral-400 fill-neutral-400' : 'text-smoke-700'}`}
         />
       ))}
     </div>
@@ -116,7 +116,7 @@ export default function Testimonials() {
       {/* Ambient glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235,0.05) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.05) 0%, transparent 65%)' }}
       />
 
       <Container size="lg">

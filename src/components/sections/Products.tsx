@@ -35,16 +35,16 @@ const PRODUCTS: Product[] = [
     name: 'CO₂ Fire Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Zero residue, safe on live electrical equipment. Ideal for server rooms, switchgear panels, labs, and offices.',
-    iconAccent: 'bg-sky-500/15 border-sky-500/30',
-    iconText: 'text-sky-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
   {
     icon: Droplets,
     name: 'AFFF Foam Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Creates a cooling foam blanket over burning liquids, preventing re-ignition. Highly effective on Class A & B fires.',
-    iconAccent: 'bg-blue-500/15 border-blue-500/30',
-    iconText: 'text-blue-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
   {
     icon: Zap,
@@ -52,8 +52,8 @@ const PRODUCTS: Product[] = [
     category: 'Fire Extinguisher',
     desc: 'FM-200 / Novec 1230 clean agent. No ozone depletion, no damage to electronics. Perfect for data centres and clean rooms.',
     tag: 'Premium',
-    iconAccent: 'bg-emerald-500/15 border-emerald-500/30',
-    iconText: 'text-emerald-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
   {
     icon: ShieldAlert,
@@ -68,8 +68,8 @@ const PRODUCTS: Product[] = [
     name: 'Fire Alarm System',
     category: 'Detection',
     desc: 'Conventional and addressable control panels with smoke detectors, heat detectors, manual call points, and sounder units.',
-    iconAccent: 'bg-red-500/15 border-red-500/30',
-    iconText: 'text-red-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
   {
     icon: Package,
@@ -77,16 +77,16 @@ const PRODUCTS: Product[] = [
     category: 'Suppression',
     desc: 'Total flooding suppression using clean agent or CO₂. Engineered for data centres, server rooms, and archive vaults.',
     tag: 'Specialist',
-    iconAccent: 'bg-purple-500/15 border-purple-500/30',
-    iconText: 'text-purple-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
   {
     icon: Thermometer,
     name: 'K-Type Kitchen Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Wet chemical formulation reacts with cooking oils to form a soapy foam layer, suppressing flames and preventing re-ignition in commercial kitchens.',
-    iconAccent: 'bg-orange-500/15 border-orange-500/30',
-    iconText: 'text-orange-400',
+    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
+    iconText: 'text-neutral-400',
   },
 ]
 
@@ -166,7 +166,7 @@ export default function Products() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(37, 99, 235,0.05) 0%, transparent 65%)',
+            'radial-gradient(circle, rgba(23, 23, 23,0.05) 0%, transparent 65%)',
         }}
       />
 
