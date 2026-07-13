@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Users, Clock, Wrench, Star, MapPin, ShieldCheck } from 'lucide-react'
 import Container from '../layout/Container'
 
@@ -21,39 +21,61 @@ const STATS: Stat[] = [
   { icon: ShieldCheck, value: 3,    suffix: '',  label: 'ISO Certifications',   desc: 'ISO 9001:2015 certified quality management processes.' },
 ]
 
-const INTERVAL = 3800
+const INTERVAL = 3400
+const TOTAL = STATS.length
 
-function useCountUp(target: number, duration = 1600, started = false) {
+function useCountUp(target: number, duration: number, run: boolean) {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    if (!started) return
+    if (!run) { setCount(0); return }
+    let raf = 0
     const start = performance.now()
     const tick = (now: number) => {
       const p = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - p, 3)
-      setCount(Math.round(eased * target))
-      if (p < 1) requestAnimationFrame(tick)
+      setCount(Math.round((1 - Math.pow(1 - p, 3)) * target))
+      if (p < 1) raf = requestAnimationFrame(tick)
     }
-    requestAnimationFrame(tick)
-  }, [started, target, duration])
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [run, target, duration])
   return count
 }
 
-function Spotlight({ stat, started }: { stat: Stat; started: boolean }) {
-  const count = useCountUp(stat.value, 1500, started)
+function pos(rel: number) {
+  if (rel === 0) return { scale: 1,    y: 0,   opacity: 1 }
+  if (rel === 1) return { scale: 0.93, y: -30, opacity: 1 }
+  if (rel === 2) return { scale: 0.86, y: -58, opacity: 1 }
+  return { scale: 0.82, y: -84, opacity: 0 }  // exiting / hidden above
+}
+
+function StatCard({ stat, rel, started }: { stat: Stat; rel: number; started: boolean }) {
+  const isFront = rel === 0
+  const count = useCountUp(stat.value, 1400, isFront && started)
   const Icon = stat.icon
+  const t = pos(rel)
+
   return (
-    <div className="flex flex-col items-start">
-      <div className="w-14 h-14 rounded-2xl bg-fire-500 flex items-center justify-center mb-6 shadow-lg shadow-fire-900/40">
+    <motion.div
+      className="absolute inset-x-0 top-0 h-full rounded-[28px] bg-neutral-900 border border-white/8 shadow-2xl shadow-black/40 px-6 sm:px-10 pt-14 pb-10 flex flex-col items-center text-center"
+      style={{ zIndex: TOTAL - rel }}
+      animate={t}
+      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {/* red glow */}
+      <div
+        className="absolute inset-0 rounded-[28px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 30%, rgba(230,47,16,0.16) 0%, transparent 60%)' }}
+      />
+      <div className="relative w-14 h-14 rounded-2xl bg-fire-500 flex items-center justify-center mb-5 shadow-lg shadow-fire-900/40">
         <Icon className="w-7 h-7 text-white" />
       </div>
-      <div className="font-heading font-black text-6xl sm:text-7xl md:text-8xl text-white leading-none tracking-tight">
+      <div className="relative font-heading font-black text-6xl sm:text-7xl md:text-8xl text-white leading-none tracking-tight">
         {stat.prefix ?? ''}{count.toLocaleString('en-IN')}
         <span className="text-fire-500">{stat.suffix}</span>
       </div>
-      <p className="font-heading font-bold text-xl sm:text-2xl text-white mt-4">{stat.label}</p>
-      <p className="text-neutral-400 text-sm sm:text-base mt-2 max-w-md leading-relaxed">{stat.desc}</p>
-    </div>
+      <p className="relative font-heading font-bold text-xl sm:text-2xl text-white mt-4">{stat.label}</p>
+      <p className="relative text-neutral-400 text-sm sm:text-base mt-2 max-w-sm leading-relaxed">{stat.desc}</p>
+    </motion.div>
   )
 }
 
@@ -62,7 +84,6 @@ export default function StatsCounter() {
   const [started, setStarted] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  // start when in view
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { setStarted(true); obs.disconnect() } },
@@ -72,20 +93,17 @@ export default function StatsCounter() {
     return () => obs.disconnect()
   }, [])
 
-  // auto-advance
   useEffect(() => {
     if (!started) return
-    const t = setInterval(() => setActive((a) => (a + 1) % STATS.length), INTERVAL)
+    const t = setInterval(() => setActive((a) => (a + 1) % TOTAL), INTERVAL)
     return () => clearInterval(t)
-  }, [started, active])
-
-  const stat = STATS[active]
+  }, [started])
 
   return (
     <section ref={ref} className="relative section-padding bg-dark-800 overflow-hidden">
       <Container>
         {/* Intro */}
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-14">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-fire-500" />
             <span className="text-fire-500 text-xs font-bold uppercase tracking-[0.28em]">About Company</span>
@@ -100,82 +118,27 @@ export default function StatsCounter() {
           </p>
         </div>
 
-        {/* Premium dark showcase card */}
-        <div className="relative rounded-3xl bg-neutral-950 overflow-hidden shadow-2xl shadow-black/30">
-          {/* red glow */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse 60% 80% at 15% 30%, rgba(230,47,16,0.22) 0%, transparent 60%)' }}
-          />
+        {/* Stacked card deck */}
+        <div className="relative h-[380px] sm:h-[420px] max-w-xl mx-auto">
+          {STATS.map((s, i) => {
+            const rel = (i - active + TOTAL) % TOTAL
+            return <StatCard key={s.label} stat={s} rel={rel} started={started} />
+          })}
+        </div>
 
-          <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-12 p-7 sm:p-10 lg:p-14">
-            {/* Spotlight (rotating) */}
-            <div className="flex flex-col justify-center min-h-[280px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -24 }}
-                  transition={{ duration: 0.45, ease: 'easeOut' }}
-                >
-                  <Spotlight stat={stat} started={started} />
-                </motion.div>
-              </AnimatePresence>
-
-              {/* progress bar */}
-              <div className="mt-8 h-1 w-full max-w-xs rounded-full bg-white/10 overflow-hidden">
-                <motion.div
-                  key={active}
-                  className="h-full bg-fire-500 rounded-full"
-                  initial={{ width: '0%' }}
-                  animate={{ width: '100%' }}
-                  transition={{ duration: INTERVAL / 1000, ease: 'linear' }}
-                />
-              </div>
-            </div>
-
-            {/* Tab list (clickable) */}
-            <div className="flex flex-col gap-2.5 justify-center">
-              {STATS.map((s, i) => {
-                const Icon = s.icon
-                const isActive = i === active
-                return (
-                  <button
-                    key={s.label}
-                    onClick={() => setActive(i)}
-                    className={[
-                      'group flex items-center gap-4 rounded-2xl px-4 sm:px-5 py-3.5 text-left transition-all duration-300 border',
-                      isActive
-                        ? 'bg-fire-500/15 border-fire-500/40'
-                        : 'bg-white/[0.03] border-white/5 hover:bg-white/[0.06]',
-                    ].join(' ')}
-                  >
-                    <div className={[
-                      'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300',
-                      isActive ? 'bg-fire-500 text-white' : 'bg-white/10 text-neutral-300 group-hover:text-white',
-                    ].join(' ')}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className={[
-                        'font-heading font-bold text-sm sm:text-base transition-colors duration-300',
-                        isActive ? 'text-white' : 'text-neutral-300 group-hover:text-white',
-                      ].join(' ')}>
-                        {s.label}
-                      </p>
-                    </div>
-                    <div className={[
-                      'font-heading font-black text-lg sm:text-xl transition-colors duration-300 flex-shrink-0',
-                      isActive ? 'text-fire-500' : 'text-neutral-500',
-                    ].join(' ')}>
-                      {s.prefix ?? ''}{s.value.toLocaleString('en-IN')}{s.suffix}
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-          </div>
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {STATS.map((s, i) => (
+            <button
+              key={s.label}
+              onClick={() => setActive(i)}
+              aria-label={`Show ${s.label}`}
+              className={[
+                'h-2 rounded-full transition-all duration-300',
+                i === active ? 'w-8 bg-fire-500' : 'w-2 bg-neutral-300 hover:bg-neutral-400',
+              ].join(' ')}
+            />
+          ))}
         </div>
       </Container>
     </section>
