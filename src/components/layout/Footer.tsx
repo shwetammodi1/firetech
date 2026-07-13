@@ -64,7 +64,7 @@ export default function Footer() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-neutral-950 hover:bg-white hover:border-white transition-all duration-300"
+                    className="w-9 h-9 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-fire-500 hover:border-fire-500 transition-all duration-300"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -79,8 +79,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {QUICK_LINKS.map(({ label, to }) => (
                 <li key={label}>
-                  <Link to={to} className="text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                    <span className="w-0 group-hover:w-3 h-px bg-white transition-all duration-300" />
+                  <Link to={to} className="text-sm hover:text-fire-500 transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                    <span className="w-0 group-hover:w-3 h-px bg-fire-500 transition-all duration-300" />
                     {label}
                   </Link>
                 </li>
@@ -94,8 +94,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {PRODUCT_LINKS.map(({ label, to }) => (
                 <li key={label}>
-                  <Link to={to} className="text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                    <span className="w-0 group-hover:w-3 h-px bg-white transition-all duration-300" />
+                  <Link to={to} className="text-sm hover:text-fire-500 transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                    <span className="w-0 group-hover:w-3 h-px bg-fire-500 transition-all duration-300" />
                     {label}
                   </Link>
                 </li>
@@ -108,17 +108,17 @@ export default function Footer() {
             <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-5">Get in Touch</h3>
             <ul className="flex flex-col gap-3.5 mb-6">
               <li>
-                <a href="tel:+918964005455" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                <a href="tel:+918964005455" className="flex items-start gap-2.5 text-sm hover:text-fire-500 transition-colors">
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" /> +91 89640 05455
                 </a>
               </li>
               <li>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 text-sm hover:text-fire-500 transition-colors">
                   <MessageCircle className="w-4 h-4 mt-0.5 flex-shrink-0" /> Chat on WhatsApp
                 </a>
               </li>
               <li>
-                <a href="mailto:mohtmhs@gmail.com" className="flex items-start gap-2.5 text-sm hover:text-white transition-colors">
+                <a href="mailto:mohtmhs@gmail.com" className="flex items-start gap-2.5 text-sm hover:text-fire-500 transition-colors">
                   <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" /> mohtmhs@gmail.com
                 </a>
               </li>
@@ -142,7 +142,7 @@ export default function Footer() {
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="w-9 h-9 rounded-full bg-white text-neutral-950 flex items-center justify-center hover:bg-neutral-200 transition-colors flex-shrink-0"
+                className="w-9 h-9 rounded-full bg-fire-500 text-white flex items-center justify-center hover:bg-fire-600 transition-colors flex-shrink-0"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -156,12 +156,12 @@ export default function Footer() {
             © {new Date().getFullYear()} Firetech Enterprises. All Rights Reserved. · ISO 9001:2015 Certified
           </p>
           <div className="flex items-center gap-5">
-            <Link to="/privacy" className="text-neutral-500 hover:text-white text-xs transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-neutral-500 hover:text-white text-xs transition-colors">Terms &amp; Conditions</Link>
+            <Link to="/privacy" className="text-neutral-500 hover:text-fire-500 text-xs transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-neutral-500 hover:text-fire-500 text-xs transition-colors">Terms &amp; Conditions</Link>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"
-              className="w-8 h-8 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-neutral-950 hover:bg-white hover:border-white transition-all duration-300"
+              className="w-8 h-8 rounded-lg border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-fire-500 hover:border-fire-500 transition-all duration-300"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
