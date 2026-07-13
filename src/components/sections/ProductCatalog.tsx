@@ -31,27 +31,40 @@ const CATEGORIES: Category[] = [
     name: 'Fire Extinguishers',
     blurb: 'Portable, modular and trolley-mounted extinguishers for every class of fire.',
     products: [
-      { name: 'ABC Dry Powder', type: 'Portable', rating: 'Class A/B/C', spec: '1, 2, 4, 6, 9 KG', img: EXT },
-      { name: 'ABC MAP 90 Modular', type: 'Ceiling Mounted', rating: 'Class A/B/C', spec: '5, 10 KG', img: EXT },
-      { name: 'CO₂ Extinguisher', type: 'Portable', rating: 'Class B/C', spec: '2, 3, 4.5 KG', img: EXT },
-      { name: 'CO₂ Extinguisher', type: 'Wheeled', rating: 'Class B/C', spec: '9, 22.5 KG', img: EXT },
+      { name: 'ABC Portable Fire Extinguisher', type: 'Portable', rating: 'Class A/B/C', spec: '1, 2, 4, 6, 9 KG', img: EXT },
+      { name: 'ABC Modular Fire Extinguisher', type: 'Ceiling Mounted', rating: 'Class A/B/C', spec: '5, 10 KG', img: EXT },
+      { name: 'ABC Modular (SS Body)', type: 'Ceiling Mounted', rating: 'Class A/B/C', spec: '5 KG', img: EXT },
+      { name: 'ABC Automatic Modular', type: 'Automatic', rating: 'Class A/B/C', spec: '5 KG', img: EXT },
+      { name: 'ABC Wheeled (CO₂ Type)', type: 'Wheeled', rating: 'Class A/B/C', spec: '25, 50 KG', img: EXT },
+      { name: 'ABC Wheeled (Stored Pressure)', type: 'Wheeled', rating: 'Class A/B/C', spec: '25, 50 KG', img: EXT },
+      { name: 'BC Dry Powder', type: 'Portable', rating: 'Class B/C', spec: '1, 2 KG', img: EXT },
+      { name: 'CO₂ Portable', type: 'Portable', rating: 'Class B/C', spec: '2, 3, 4.5 KG', img: EXT },
+      { name: 'CO₂ Wheeled', type: 'Wheeled', rating: 'Class B/C', spec: '9, 22.5 KG', img: EXT },
+      { name: 'Clean Agent Portable', type: 'Portable', rating: 'Class A/B/C', spec: '2, 4, 6 KG', img: EXT },
+      { name: 'Clean Agent Modular', type: 'Ceiling Mounted', rating: 'Class A/B/C', spec: '2, 4 KG', img: EXT },
+      { name: 'Clean Agent SS', type: 'Portable', rating: 'Class A/B/C', spec: '4 KG', img: EXT },
       { name: 'Mechanical Foam (AFFF)', type: 'Portable', rating: 'Class A/B', spec: '9, 50 L', img: EXT },
-      { name: 'Clean Agent', type: 'Portable', rating: 'Class A/B/C', spec: '2, 4, 6 KG', img: EXT },
-      { name: 'K-Type Kitchen', type: 'Wall Mounted', rating: 'Class K', spec: '6, 9 L', img: EXT },
+      { name: 'Water Mist', type: 'Portable', rating: 'Class A/K', spec: '6, 9 L', img: EXT },
       { name: 'Water CO₂', type: 'Portable', rating: 'Class A', spec: '9 L', img: EXT },
+      { name: 'K-Type Kitchen', type: 'Wall Mounted', rating: 'Class K', spec: '6, 9 L', img: EXT },
     ],
   },
   {
     id: 'hydrant',
     name: 'Fire Hydrant System',
-    blurb: 'End-to-end hydrant and hose-reel systems for high-rise and industrial premises.',
+    blurb: 'End-to-end hydrant, hose and coupling systems for high-rise and industrial premises.',
     products: [
-      { name: 'RRL Hose Pipe (Type A)', type: 'Reinforced', rating: 'IS 636', spec: '63mm × 15m', img: HYD },
-      { name: 'Hose Reel Drum', type: 'Wall Mounted', rating: 'Swinging', spec: '20 / 30 m', img: HYD },
-      { name: 'Hydrant Landing Valve', type: 'Gunmetal', rating: 'Single / Double', spec: '63mm', img: HYD },
-      { name: 'Branch Pipe & Nozzle', type: 'Aluminium', rating: 'Short / Long', spec: '63mm', img: HYD },
-      { name: 'Fire Hose Box', type: 'MS / SS', rating: 'Single / Double', spec: 'Wall Mount', img: HYD },
-      { name: 'Instantaneous Coupling', type: 'Gunmetal', rating: 'Male / Female', spec: '63mm', img: HYD },
+      { name: 'Hose Pipe Type A (GM Coupling)', type: 'RRL Reinforced', rating: 'IS 636', spec: '63mm × 15m', img: HYD },
+      { name: 'Hose Pipe Type A (SS Coupling)', type: 'RRL Reinforced', rating: 'IS 636', spec: '63mm × 15m', img: HYD },
+      { name: 'Hose Pipe Type B (SS Coupling)', type: 'RRL Reinforced', rating: 'IS 636', spec: '63mm × 15m', img: HYD },
+      { name: 'Hose Reel Drum (GM Nozzle)', type: 'Wall Mounted', rating: 'Swinging', spec: '20 / 30 m', img: HYD },
+      { name: 'Hose Reel Drum Indian (SS Nozzle)', type: 'Wall Mounted', rating: 'Swinging', spec: '20 / 30 m', img: HYD },
+      { name: 'Hydrant Valve', type: 'Gunmetal', rating: 'Single / Double', spec: '63mm', img: HYD },
+      { name: 'Branch Pipe (SS)', type: 'Stainless Steel', rating: 'Short / Long', spec: '63mm', img: HYD },
+      { name: 'Nozzle (SS / GM)', type: 'Metal', rating: 'Jet / Spray', spec: '63mm', img: HYD },
+      { name: 'Instantaneous Coupling', type: 'GM / SS', rating: 'Male / Female', spec: '63mm', img: HYD },
+      { name: 'Hose Box (MS Type)', type: 'Mild Steel', rating: 'Single / Double', spec: 'Wall Mount', img: HYD },
+      { name: 'Hose Box (FRP Type)', type: 'FRP', rating: 'Single / Double', spec: 'Wall Mount', img: HYD },
     ],
   },
   {
@@ -59,11 +72,12 @@ const CATEGORIES: Category[] = [
     name: 'Fire Suppression System',
     blurb: 'Automatic detection & suppression that stops fire before it spreads.',
     products: [
-      { name: 'Automatic Sprinkler', type: 'Pendant / Upright', rating: '68°C', spec: '15 / 20 mm', img: SUP },
-      { name: 'Clean Agent (Novec 1230)', type: 'Room Flooding', rating: 'Class A/B/C', spec: 'Modular', img: SUP },
-      { name: 'Kitchen Wet Chemical', type: 'Hood System', rating: 'Class K', spec: 'Auto / Manual', img: SUP },
+      { name: 'Sprinklers (UL Listed)', type: 'Pendant / Upright', rating: '68 °C', spec: '15 / 20 mm', img: SUP },
+      { name: 'Clean Agent Suppression', type: 'Room Flooding', rating: 'Class A/B/C', spec: 'Modular', img: SUP },
       { name: 'CO₂ Flooding System', type: 'Total Flooding', rating: 'Class B/C', spec: 'High Pressure', img: SUP },
-      { name: 'FM-200 Gas System', type: 'Modular', rating: 'Class A/B/C', spec: 'Server / Panel', img: SUP },
+      { name: 'CO₂ Based Suppression', type: 'Total Flooding', rating: 'Class B/C', spec: 'IHP', img: SUP },
+      { name: 'Kitchen Wet Chemical', type: 'Hood System', rating: 'Class K', spec: 'Auto / Manual', img: SUP },
+      { name: 'Gas-Based (DLP) System', type: 'Modular', rating: 'Class A/B/C', spec: 'Server / Panel', img: SUP },
       { name: 'Deluge & Foam System', type: 'Open Head', rating: 'Class A/B', spec: 'Industrial', img: SUP },
     ],
   },
@@ -75,10 +89,14 @@ const CATEGORIES: Category[] = [
       { name: 'Optical Smoke Detector', type: 'Ceiling Mount', rating: 'Conventional', spec: 'Photoelectric', img: ALM },
       { name: 'Heat Detector', type: 'Ceiling Mount', rating: 'Fixed / RoR', spec: '57 / 90 °C', img: ALM },
       { name: 'Manual Call Point', type: 'Wall Mount', rating: 'Break Glass', spec: 'Resettable', img: ALM },
-      { name: 'Fire Alarm Panel', type: 'Wall Mount', rating: 'Conventional', spec: '2 / 4 / 8 Zone', img: ALM },
+      { name: 'Fire Alarm Control Panel', type: 'Wall Mount', rating: 'Conventional', spec: '2 / 4 / 8 Zone', img: ALM },
+      { name: 'Fire Alarm Notification System', type: 'Wall Mount', rating: 'Sounder', spec: 'Hooter / Strobe', img: ALM },
+      { name: 'Extinguisher Wall Brackets', type: 'Wall Mount', rating: 'MS', spec: 'ABC / CO₂', img: ACC },
+      { name: 'CO₂ Cartridge', type: 'Refill', rating: 'Sealed', spec: 'Assorted', img: ACC },
+      { name: 'Fire Bucket Stand', type: 'Free Standing', rating: '4 Bucket', spec: 'With Sand', img: ACC },
+      { name: 'First Aid Kit', type: 'Wall / Portable', rating: 'SP 26 Person', spec: 'Medical', img: ACC },
       { name: 'Emergency Exit Light', type: 'Wall Mount', rating: 'LED', spec: '2 / 3 Hr', img: ACC },
       { name: 'Fire Blanket', type: 'Wall Mount', rating: 'Class F', spec: '1.2 × 1.2 m', img: ACC },
-      { name: 'Fire Bucket Stand', type: 'Free Standing', rating: '4 Bucket', spec: 'With Sand', img: ACC },
       { name: 'Safety Signage Set', type: 'Photo-luminescent', rating: 'IS 12349', spec: 'Assorted', img: ACC },
     ],
   },
@@ -104,7 +122,6 @@ function ProductCard({ p }: { p: Product }) {
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        {/* Type badge */}
         <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-smoke-200 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow-sm">
           {p.type}
         </span>
@@ -159,7 +176,7 @@ export default function ProductCatalog() {
               {/* Products grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
                 {cat.products.map((p) => (
-                  <ProductCard key={cat.id + p.name + p.type} p={p} />
+                  <ProductCard key={cat.id + p.name} p={p} />
                 ))}
               </div>
             </div>
