@@ -19,11 +19,17 @@ interface Category {
   products: Product[]
 }
 
-const EXT = '/images/extinguisher.jpg'
-const HYD = '/images/firefighter.jpg'
-const SUP = '/images/sprinkler.jpg'
-const ALM = '/images/smoke-detector.jpg'
-const ACC = '/images/technician.jpg'
+const EXT   = '/images/extinguisher.jpg'
+const CO2   = '/images/co2.jpg'
+const FOAM  = '/images/foam.jpg'
+const HYD   = '/images/firefighter.jpg'
+const VALVE = '/images/hydrant-valve.jpg'
+const SUP   = '/images/sprinkler.jpg'
+const ALM   = '/images/smoke-detector.jpg'
+const CALL  = '/images/call-point.jpg'
+const EXIT  = '/images/exit-sign.jpg'
+const BLKT  = '/images/fire-blanket.jpg'
+const ACC   = '/images/technician.jpg'
 
 const CATEGORIES: Category[] = [
   {
@@ -38,15 +44,15 @@ const CATEGORIES: Category[] = [
       { name: 'ABC Wheeled (CO₂ Type)', type: 'Wheeled', rating: 'Class A/B/C', spec: '25, 50 KG', img: EXT },
       { name: 'ABC Wheeled (Stored Pressure)', type: 'Wheeled', rating: 'Class A/B/C', spec: '25, 50 KG', img: EXT },
       { name: 'BC Dry Powder', type: 'Portable', rating: 'Class B/C', spec: '1, 2 KG', img: EXT },
-      { name: 'CO₂ Portable', type: 'Portable', rating: 'Class B/C', spec: '2, 3, 4.5 KG', img: EXT },
-      { name: 'CO₂ Wheeled', type: 'Wheeled', rating: 'Class B/C', spec: '9, 22.5 KG', img: EXT },
+      { name: 'CO₂ Portable', type: 'Portable', rating: 'Class B/C', spec: '2, 3, 4.5 KG', img: CO2 },
+      { name: 'CO₂ Wheeled', type: 'Wheeled', rating: 'Class B/C', spec: '9, 22.5 KG', img: CO2 },
       { name: 'Clean Agent Portable', type: 'Portable', rating: 'Class A/B/C', spec: '2, 4, 6 KG', img: EXT },
       { name: 'Clean Agent Modular', type: 'Ceiling Mounted', rating: 'Class A/B/C', spec: '2, 4 KG', img: EXT },
       { name: 'Clean Agent SS', type: 'Portable', rating: 'Class A/B/C', spec: '4 KG', img: EXT },
-      { name: 'Mechanical Foam (AFFF)', type: 'Portable', rating: 'Class A/B', spec: '9, 50 L', img: EXT },
-      { name: 'Water Mist', type: 'Portable', rating: 'Class A/K', spec: '6, 9 L', img: EXT },
-      { name: 'Water CO₂', type: 'Portable', rating: 'Class A', spec: '9 L', img: EXT },
-      { name: 'K-Type Kitchen', type: 'Wall Mounted', rating: 'Class K', spec: '6, 9 L', img: EXT },
+      { name: 'Mechanical Foam (AFFF)', type: 'Portable', rating: 'Class A/B', spec: '9, 50 L', img: FOAM },
+      { name: 'Water Mist', type: 'Portable', rating: 'Class A/K', spec: '6, 9 L', img: FOAM },
+      { name: 'Water CO₂', type: 'Portable', rating: 'Class A', spec: '9 L', img: FOAM },
+      { name: 'K-Type Kitchen', type: 'Wall Mounted', rating: 'Class K', spec: '6, 9 L', img: FOAM },
     ],
   },
   {
@@ -59,10 +65,10 @@ const CATEGORIES: Category[] = [
       { name: 'Hose Pipe Type B (SS Coupling)', type: 'RRL Reinforced', rating: 'IS 636', spec: '63mm × 15m', img: HYD },
       { name: 'Hose Reel Drum (GM Nozzle)', type: 'Wall Mounted', rating: 'Swinging', spec: '20 / 30 m', img: HYD },
       { name: 'Hose Reel Drum Indian (SS Nozzle)', type: 'Wall Mounted', rating: 'Swinging', spec: '20 / 30 m', img: HYD },
-      { name: 'Hydrant Valve', type: 'Gunmetal', rating: 'Single / Double', spec: '63mm', img: HYD },
-      { name: 'Branch Pipe (SS)', type: 'Stainless Steel', rating: 'Short / Long', spec: '63mm', img: HYD },
-      { name: 'Nozzle (SS / GM)', type: 'Metal', rating: 'Jet / Spray', spec: '63mm', img: HYD },
-      { name: 'Instantaneous Coupling', type: 'GM / SS', rating: 'Male / Female', spec: '63mm', img: HYD },
+      { name: 'Hydrant Valve', type: 'Gunmetal', rating: 'Single / Double', spec: '63mm', img: VALVE },
+      { name: 'Branch Pipe (SS)', type: 'Stainless Steel', rating: 'Short / Long', spec: '63mm', img: VALVE },
+      { name: 'Nozzle (SS / GM)', type: 'Metal', rating: 'Jet / Spray', spec: '63mm', img: VALVE },
+      { name: 'Instantaneous Coupling', type: 'GM / SS', rating: 'Male / Female', spec: '63mm', img: VALVE },
       { name: 'Hose Box (MS Type)', type: 'Mild Steel', rating: 'Single / Double', spec: 'Wall Mount', img: HYD },
       { name: 'Hose Box (FRP Type)', type: 'FRP', rating: 'Single / Double', spec: 'Wall Mount', img: HYD },
     ],
@@ -74,8 +80,8 @@ const CATEGORIES: Category[] = [
     products: [
       { name: 'Sprinklers (UL Listed)', type: 'Pendant / Upright', rating: '68 °C', spec: '15 / 20 mm', img: SUP },
       { name: 'Clean Agent Suppression', type: 'Room Flooding', rating: 'Class A/B/C', spec: 'Modular', img: SUP },
-      { name: 'CO₂ Flooding System', type: 'Total Flooding', rating: 'Class B/C', spec: 'High Pressure', img: SUP },
-      { name: 'CO₂ Based Suppression', type: 'Total Flooding', rating: 'Class B/C', spec: 'IHP', img: SUP },
+      { name: 'CO₂ Flooding System', type: 'Total Flooding', rating: 'Class B/C', spec: 'High Pressure', img: CO2 },
+      { name: 'CO₂ Based Suppression', type: 'Total Flooding', rating: 'Class B/C', spec: 'IHP', img: CO2 },
       { name: 'Kitchen Wet Chemical', type: 'Hood System', rating: 'Class K', spec: 'Auto / Manual', img: SUP },
       { name: 'Gas-Based (DLP) System', type: 'Modular', rating: 'Class A/B/C', spec: 'Server / Panel', img: SUP },
       { name: 'Deluge & Foam System', type: 'Open Head', rating: 'Class A/B', spec: 'Industrial', img: SUP },
@@ -88,16 +94,16 @@ const CATEGORIES: Category[] = [
     products: [
       { name: 'Optical Smoke Detector', type: 'Ceiling Mount', rating: 'Conventional', spec: 'Photoelectric', img: ALM },
       { name: 'Heat Detector', type: 'Ceiling Mount', rating: 'Fixed / RoR', spec: '57 / 90 °C', img: ALM },
-      { name: 'Manual Call Point', type: 'Wall Mount', rating: 'Break Glass', spec: 'Resettable', img: ALM },
-      { name: 'Fire Alarm Control Panel', type: 'Wall Mount', rating: 'Conventional', spec: '2 / 4 / 8 Zone', img: ALM },
-      { name: 'Fire Alarm Notification System', type: 'Wall Mount', rating: 'Sounder', spec: 'Hooter / Strobe', img: ALM },
-      { name: 'Extinguisher Wall Brackets', type: 'Wall Mount', rating: 'MS', spec: 'ABC / CO₂', img: ACC },
-      { name: 'CO₂ Cartridge', type: 'Refill', rating: 'Sealed', spec: 'Assorted', img: ACC },
+      { name: 'Manual Call Point', type: 'Wall Mount', rating: 'Break Glass', spec: 'Resettable', img: CALL },
+      { name: 'Fire Alarm Control Panel', type: 'Wall Mount', rating: 'Conventional', spec: '2 / 4 / 8 Zone', img: CALL },
+      { name: 'Fire Alarm Notification System', type: 'Wall Mount', rating: 'Sounder', spec: 'Hooter / Strobe', img: CALL },
+      { name: 'Extinguisher Wall Brackets', type: 'Wall Mount', rating: 'MS', spec: 'ABC / CO₂', img: EXT },
+      { name: 'CO₂ Cartridge', type: 'Refill', rating: 'Sealed', spec: 'Assorted', img: CO2 },
       { name: 'Fire Bucket Stand', type: 'Free Standing', rating: '4 Bucket', spec: 'With Sand', img: ACC },
       { name: 'First Aid Kit', type: 'Wall / Portable', rating: 'SP 26 Person', spec: 'Medical', img: ACC },
-      { name: 'Emergency Exit Light', type: 'Wall Mount', rating: 'LED', spec: '2 / 3 Hr', img: ACC },
-      { name: 'Fire Blanket', type: 'Wall Mount', rating: 'Class F', spec: '1.2 × 1.2 m', img: ACC },
-      { name: 'Safety Signage Set', type: 'Photo-luminescent', rating: 'IS 12349', spec: 'Assorted', img: ACC },
+      { name: 'Emergency Exit Light', type: 'Wall Mount', rating: 'LED', spec: '2 / 3 Hr', img: EXIT },
+      { name: 'Fire Blanket', type: 'Wall Mount', rating: 'Class F', spec: '1.2 × 1.2 m', img: BLKT },
+      { name: 'Safety Signage Set', type: 'Photo-luminescent', rating: 'IS 12349', spec: 'Assorted', img: EXIT },
     ],
   },
 ]
