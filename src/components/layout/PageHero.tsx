@@ -13,7 +13,7 @@ export default function PageHero({ title, subtitle, crumb }: PageHeroProps) {
     <section className="relative overflow-hidden bg-neutral-950 pt-28 pb-14 sm:pt-36 sm:pb-20">
       {/* Grayscale image wash */}
       <div
-        className="absolute inset-0 bg-cover bg-center grayscale opacity-25"
+        className="absolute inset-0 bg-cover bg-center opacity-25"
         style={{ backgroundImage: 'url(/images/hero-fire.jpg)' }}
       />
       <div

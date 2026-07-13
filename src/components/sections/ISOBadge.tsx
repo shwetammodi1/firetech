@@ -67,7 +67,7 @@ export default function ISOBadge() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(135deg, rgba(23, 23, 23,0.04) 0%, transparent 50%, rgba(23, 23, 23,0.03) 100%)',
+            'linear-gradient(135deg, rgba(230, 47, 16,0.04) 0%, transparent 50%, rgba(230, 47, 16,0.03) 100%)',
         }}
       />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fire-500/30 to-transparent" />

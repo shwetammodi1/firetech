@@ -56,7 +56,7 @@ export default function Hero() {
     >
       {/* ── Cinematic background photograph ── */}
       <div
-        className="absolute inset-0 bg-cover bg-center grayscale"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(/images/hero-fire.jpg)' }}
       />
 
@@ -74,7 +74,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 100% 60% at 50% 38%, rgba(23, 23, 23,0.30) 0%, transparent 68%)',
+            'radial-gradient(ellipse 100% 60% at 50% 38%, rgba(230, 47, 16,0.30) 0%, transparent 68%)',
           mixBlendMode: 'soft-light',
         }}
       />
@@ -130,7 +130,7 @@ export default function Hero() {
               <span
                 className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1"
                 style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #d4d4d4 55%, #a3a3a3 100%)',
+                  background: 'linear-gradient(135deg, #ffb4a0 0%, #ff5a3c 55%, #e62f10 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',

@@ -76,12 +76,12 @@ export default function WhyUs() {
       {/* Top-right ambient */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.1) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(230, 47, 16,0.1) 0%, transparent 65%)' }}
       />
       {/* Bottom-left ambient */}
       <div
         className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(23, 23, 23,0.08) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(230, 47, 16,0.08) 0%, transparent 65%)' }}
       />
 
       <Container>

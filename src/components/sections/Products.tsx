@@ -166,7 +166,7 @@ export default function Products() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(23, 23, 23,0.05) 0%, transparent 65%)',
+            'radial-gradient(circle, rgba(230, 47, 16,0.05) 0%, transparent 65%)',
         }}
       />
 

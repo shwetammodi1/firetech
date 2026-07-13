@@ -9,7 +9,7 @@ export default function FreeServiceBanner() {
     <section className="relative overflow-hidden">
       {/* Background photograph */}
       <div
-        className="absolute inset-0 bg-cover bg-center grayscale"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(/images/firefighter.jpg)' }}
       />
       {/* Navy gradient overlay */}
@@ -17,7 +17,7 @@ export default function FreeServiceBanner() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(15,23,42,0.85) 45%, rgba(23, 23, 23,0.55) 100%)',
+            'linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(15,23,42,0.85) 45%, rgba(230, 47, 16,0.55) 100%)',
         }}
       />
 
@@ -41,7 +41,7 @@ export default function FreeServiceBanner() {
               Get Your{' '}
               <span
                 style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #cfcfcf 100%)',
+                  background: 'linear-gradient(135deg, #ffc3b6 0%, #ff5a3c 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',

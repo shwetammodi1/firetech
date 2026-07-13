@@ -75,7 +75,7 @@ export default function StatsCounter() {
       {/* ambient center glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 50%, rgba(23, 23, 23,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 80% at 50% 50%, rgba(230, 47, 16,0.06) 0%, transparent 70%)' }}
       />
 
       <Container>

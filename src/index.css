@@ -9,28 +9,28 @@
   --font-heading: "Montserrat", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  /* ---------- Monochrome accent (black & white) ----------
+  /* ---------- Brand red-orange (matches safeprofire #e62f10) ----------
      Mapped onto the legacy "fire" scale so every existing
-     fire-* / ember-* utility becomes a black/charcoal tone. */
-  --color-fire-50:  #f5f5f5;
-  --color-fire-100: #e5e5e5;
-  --color-fire-200: #d4d4d4;
-  --color-fire-300: #525252;
-  --color-fire-400: #404040;
-  --color-fire-500: #171717;
-  --color-fire-600: #000000;
-  --color-fire-700: #000000;
-  --color-fire-800: #000000;
-  --color-fire-900: #0a0a0a;
+     fire-* / ember-* utility becomes the brand red-orange. */
+  --color-fire-50:  #fff1ee;
+  --color-fire-100: #ffe0da;
+  --color-fire-200: #ffc3b6;
+  --color-fire-300: #ff8f78;
+  --color-fire-400: #ff5a3c;
+  --color-fire-500: #e62f10;
+  --color-fire-600: #c4280e;
+  --color-fire-700: #a6200b;
+  --color-fire-800: #85190a;
+  --color-fire-900: #6b1408;
 
-  /* ---------- Ember → Monochrome accent ---------- */
-  --color-ember-300: #525252;
-  --color-ember-400: #404040;
-  --color-ember-500: #171717;
-  --color-ember-600: #000000;
-  --color-ember-700: #000000;
-  --color-ember-800: #000000;
-  --color-ember-900: #0a0a0a;
+  /* ---------- Ember → Brand red-orange ---------- */
+  --color-ember-300: #ff8f78;
+  --color-ember-400: #ff5a3c;
+  --color-ember-500: #e62f10;
+  --color-ember-600: #c4280e;
+  --color-ember-700: #a6200b;
+  --color-ember-800: #85190a;
+  --color-ember-900: #6b1408;
 
   /* ---------- Backgrounds (legacy "dark" → light) ---------- */
   --color-dark-950: #f1f5f9;  /* footer / deepest section */
@@ -89,14 +89,14 @@ body {
    ========================================= */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #171717; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #000000; }
+::-webkit-scrollbar-thumb { background: #e62f10; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #c4280e; }
 
 /* =========================================
    SELECTION
    ========================================= */
 ::selection {
-  background: rgba(23, 23, 23, 0.18);
+  background: rgba(230, 47, 16, 0.18);
   color: #0f172a;
 }
 
@@ -107,18 +107,18 @@ body {
 /* Soft blue glow / elevation for light surfaces */
 .fire-glow {
   box-shadow:
-    0 10px 30px rgba(23, 23, 23, 0.18),
-    0 4px 12px rgba(23, 23, 23, 0.10);
+    0 10px 30px rgba(230, 47, 16, 0.18),
+    0 4px 12px rgba(230, 47, 16, 0.10);
 }
 
 .fire-text-glow {
-  text-shadow: 0 1px 2px rgba(23, 23, 23, 0.15);
+  text-shadow: 0 1px 2px rgba(230, 47, 16, 0.15);
 }
 
 .ember-glow {
   box-shadow:
-    0 8px 24px rgba(23, 23, 23, 0.15),
-    0 2px 8px rgba(23, 23, 23, 0.08);
+    0 8px 24px rgba(230, 47, 16, 0.15),
+    0 2px 8px rgba(230, 47, 16, 0.08);
 }
 
 /* Cards — light glass / elevated white */
@@ -131,15 +131,15 @@ body {
 }
 
 .glass-fire {
-  background: rgba(23, 23, 23, 0.06);
+  background: rgba(230, 47, 16, 0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(23, 23, 23, 0.18);
+  border: 1px solid rgba(230, 47, 16, 0.18);
 }
 
 /* Gradient brand-blue text */
 .gradient-fire {
-  background: linear-gradient(135deg, #404040 0%, #171717 55%, #000000 100%);
+  background: linear-gradient(135deg, #ff8f78 0%, #e62f10 55%, #c4280e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -173,7 +173,7 @@ body {
    FOCUS STYLES (Accessibility)
    ========================================= */
 :focus-visible {
-  outline: 2px solid #171717;
+  outline: 2px solid #e62f10;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -187,7 +187,7 @@ body {
   left: 1rem;
   z-index: 9999;
   padding: 0.5rem 1rem;
-  background: #171717;
+  background: #e62f10;
   color: #fff;
   font-weight: 700;
   font-size: 0.875rem;
@@ -297,7 +297,7 @@ select option {
    ========================================= */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(23, 23, 23,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(230, 47, 16,0.25), transparent);
 }
 
 /* =========================================
@@ -310,5 +310,5 @@ select option {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(23, 23, 23,0.12), 0 0 0 1px rgba(23, 23, 23,0.15);
+  box-shadow: 0 20px 40px rgba(230, 47, 16,0.12), 0 0 0 1px rgba(230, 47, 16,0.15);
 }
