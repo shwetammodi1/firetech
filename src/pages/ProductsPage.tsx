@@ -1,6 +1,5 @@
 import PageHero          from '../components/layout/PageHero'
-import ProductCategories from '../components/sections/ProductCategories'
-import Services          from '../components/sections/Services'
+import ProductCatalog    from '../components/sections/ProductCatalog'
 import FreeServiceBanner from '../components/sections/FreeServiceBanner'
 
 export default function ProductsPage() {
@@ -8,11 +7,10 @@ export default function ProductsPage() {
     <>
       <PageHero
         crumb="Products"
-        title="Our Products & Solutions"
-        subtitle="Advanced fire safety instruments and services — engineered for reliability, performance and protection across industrial and commercial environments."
+        title="Our Products"
+        subtitle="Explore our complete range of fire safety solutions — extinguishers, hydrant systems, suppression systems and safety accessories."
       />
-      <ProductCategories />
-      <Services />
+      <ProductCatalog />
       <FreeServiceBanner />
     </>
   )

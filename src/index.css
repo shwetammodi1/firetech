@@ -5,9 +5,9 @@
    Light · Professional · Blue & White
    ========================================= */
 @theme {
-  /* ---------- Typography ---------- */
-  --font-heading: "Montserrat", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* ---------- Typography (matches safeprofire: Outfit) ---------- */
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
 
   /* ---------- Brand red-orange (matches safeprofire #e62f10) ----------
      Mapped onto the legacy "fire" scale so every existing
@@ -32,29 +32,29 @@
   --color-ember-800: #85190a;
   --color-ember-900: #6b1408;
 
-  /* ---------- Backgrounds (legacy "dark" → light) ---------- */
-  --color-dark-950: #f1f5f9;  /* footer / deepest section */
-  --color-dark-900: #ffffff;  /* page base / hero */
-  --color-dark-800: #f8fafc;  /* alt section */
-  --color-dark-700: #f1f5f9;  /* alt section 2 */
-  --color-dark-600: #e2e8f0;
-  --color-dark-500: #cbd5e1;
-  --color-dark-400: #94a3b8;
-  --color-dark-300: #64748b;
+  /* ---------- Backgrounds (warm off-white, matches safeprofire #fafafa) ---------- */
+  --color-dark-950: #f5f5f5;  /* deepest light section */
+  --color-dark-900: #ffffff;  /* page base / white sections */
+  --color-dark-800: #fafafa;  /* alt section (warm off-white) */
+  --color-dark-700: #f5f5f5;  /* alt section 2 */
+  --color-dark-600: #e5e5e5;
+  --color-dark-500: #d4d4d4;
+  --color-dark-400: #a3a3a3;
+  --color-dark-300: #737373;
 
-  /* ---------- Text scale (legacy "smoke" → inverted) ----------
+  /* ---------- Text scale (neutral greys, matches safeprofire) ----------
      smoke-100 = primary heading text (darkest),
      ascending numbers get lighter/more muted. */
   --color-smoke-50:  #ffffff;
-  --color-smoke-100: #0f172a;
-  --color-smoke-200: #1e293b;
-  --color-smoke-300: #334155;
-  --color-smoke-400: #475569;
-  --color-smoke-500: #64748b;
-  --color-smoke-600: #6b7280;
-  --color-smoke-700: #94a3b8;
-  --color-smoke-800: #cbd5e1;
-  --color-smoke-900: #e2e8f0;
+  --color-smoke-100: #171717;
+  --color-smoke-200: #262626;
+  --color-smoke-300: #404040;
+  --color-smoke-400: #525252;
+  --color-smoke-500: #737373;
+  --color-smoke-600: #808080;
+  --color-smoke-700: #a1a1a1;
+  --color-smoke-800: #d4d4d4;
+  --color-smoke-900: #e5e5e5;
 }
 
 /* =========================================
@@ -76,8 +76,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #fafafa;
+  color: #171717;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -88,7 +88,7 @@ body {
    CUSTOM SCROLLBAR
    ========================================= */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
 ::-webkit-scrollbar-thumb { background: #e62f10; border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: #c4280e; }
 
@@ -97,7 +97,7 @@ body {
    ========================================= */
 ::selection {
   background: rgba(230, 47, 16, 0.18);
-  color: #0f172a;
+  color: #171717;
 }
 
 /* =========================================
@@ -126,8 +126,8 @@ body {
   background: #ffffff;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  box-shadow: 0 1px 3px rgba(23, 23, 23, 0.06);
 }
 
 .glass-fire {
@@ -289,7 +289,7 @@ input, textarea, select, button {
 
 select option {
   background: #ffffff;
-  color: #0f172a;
+  color: #171717;
 }
 
 /* =========================================

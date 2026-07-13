@@ -48,7 +48,7 @@ export default function FloatingWhatsApp() {
                 <button
                   onClick={() => { setTooltip(false); setDismissed(true) }}
                   aria-label="Dismiss"
-                  className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-dark-700 border border-slate-900/10 flex items-center justify-center text-smoke-500 hover:text-smoke-300 transition-colors"
+                  className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-dark-700 border border-neutral-900/10 flex items-center justify-center text-smoke-500 hover:text-smoke-300 transition-colors"
                 >
                   <X className="w-3 h-3" />
                 </button>

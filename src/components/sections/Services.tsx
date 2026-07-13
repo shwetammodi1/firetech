@@ -43,7 +43,7 @@ const SERVICES: Service[] = [
     icon: Lightbulb,
     title: 'Emergency & Exit Lighting',
     desc:  'LED emergency lighting systems and illuminated exit signs ensuring safe evacuation during power failures.',
-    accent: 'bg-neutral-500/15 border-neutral-500/30',
+    accent: 'bg-fire-500/15 border-fire-500/30',
   },
   {
     icon: Wrench,
@@ -68,7 +68,7 @@ const SERVICES: Service[] = [
     icon: GraduationCap,
     title: 'Fire Safety Training',
     desc:  'Practical on-site training programs for staff on fire prevention, correct use of extinguishers, and emergency evacuation drills.',
-    accent: 'bg-neutral-500/15 border-neutral-500/30',
+    accent: 'bg-fire-500/15 border-fire-500/30',
   },
 ]
 
@@ -78,7 +78,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
     <motion.article
       variants={fadeUp}
       custom={index}
-      className="relative glass rounded-2xl p-6 border border-slate-900/5
+      className="relative glass rounded-2xl p-6 border border-neutral-900/5
                  hover:border-fire-500/25 hover:bg-fire-500/[0.025]
                  transition-all duration-400 group cursor-default overflow-hidden
                  flex flex-col h-full"
@@ -95,7 +95,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       {/* Icon */}
       <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border ${accent} transition-all duration-300 group-hover:scale-110`}>
-        <Icon className="w-6 h-6 text-fire-400 group-hover:text-fire-300 transition-colors duration-300" />
+        <Icon className="w-6 h-6 text-fire-500 group-hover:text-fire-300 transition-colors duration-300" />
       </div>
 
       {/* Content */}

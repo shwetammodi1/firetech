@@ -16,57 +16,57 @@ const REASONS = [
     icon: BadgeCheck,
     title: 'ISO 9001:2015 Certified',
     desc: 'Every process — from procurement to installation — follows internationally certified quality standards.',
-    accent: 'text-fire-400',
+    accent: 'text-fire-500',
     bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: Zap,
     title: 'Fast & Reliable Service',
     desc: 'Same-day emergency response with dedicated field engineers on standby across all service regions.',
-    accent: 'text-neutral-400',
-    bg: 'bg-neutral-500/10 border-neutral-500/25',
+    accent: 'text-fire-500',
+    bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: HeartHandshake,
     title: 'Long-Term Partnership',
     desc: 'We don\'t just install and leave. Our AMC clients receive ongoing care, reminders, and priority support.',
-    accent: 'text-fire-400',
+    accent: 'text-fire-500',
     bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: Banknote,
     title: 'Transparent Pricing',
     desc: 'No hidden costs. Clear quotations, fair pricing, and flexible AMC plans tailored to your budget.',
-    accent: 'text-neutral-400',
-    bg: 'bg-neutral-500/10 border-neutral-500/25',
+    accent: 'text-fire-500',
+    bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: ShieldCheck,
     title: 'Compliance Guaranteed',
     desc: 'We ensure all installations meet local fire authority and NBC (National Building Code) requirements.',
-    accent: 'text-fire-400',
+    accent: 'text-fire-500',
     bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: Star,
     title: 'Proven Track Record',
     desc: '500+ satisfied clients across industries — manufacturing, hospitality, healthcare, education, and more.',
-    accent: 'text-neutral-400',
-    bg: 'bg-neutral-500/10 border-neutral-500/25',
+    accent: 'text-fire-500',
+    bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: Headphones,
     title: '24/7 Support',
     desc: 'Round-the-clock helpline for emergencies. Because fire safety issues don\'t follow business hours.',
-    accent: 'text-fire-400',
+    accent: 'text-fire-500',
     bg: 'bg-fire-500/10 border-fire-500/25',
   },
   {
     icon: ThumbsUp,
     title: 'Experienced Team',
     desc: 'Our engineers hold national certifications with 15+ years of hands-on field experience across all system types.',
-    accent: 'text-neutral-400',
-    bg: 'bg-neutral-500/10 border-neutral-500/25',
+    accent: 'text-fire-500',
+    bg: 'bg-fire-500/10 border-fire-500/25',
   },
 ]
 
@@ -112,7 +112,7 @@ export default function WhyUs() {
             <motion.div
               key={title}
               variants={fadeUp}
-              className="relative glass rounded-2xl p-6 border border-slate-900/5
+              className="relative glass rounded-2xl p-6 border border-neutral-900/5
                          hover:border-fire-500/20 hover:bg-fire-500/[0.025]
                          transition-all duration-400 group overflow-hidden
                          flex flex-col h-full"

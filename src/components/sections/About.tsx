@@ -55,18 +55,18 @@ export default function About() {
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-fire-500/60 rounded-tl-3xl pointer-events-none" />
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-fire-500/60 rounded-br-3xl pointer-events-none" />
 
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/20 ring-1 ring-slate-900/10">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-neutral-900/20 ring-1 ring-neutral-900/10">
               <img
                 src="/images/technician.jpg"
                 alt="Firetech certified engineer installing a fire safety system"
                 className="w-full h-[340px] sm:h-[420px] object-cover transition-all duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/30 to-transparent" />
             </div>
 
             {/* Floating stat badge */}
-            <div className="absolute -bottom-6 left-6 sm:left-8 bg-white rounded-2xl shadow-xl shadow-slate-900/15 border border-slate-900/5 px-5 py-4 flex items-center gap-3">
+            <div className="absolute -bottom-6 left-6 sm:left-8 bg-white rounded-2xl shadow-xl shadow-neutral-900/15 border border-neutral-900/5 px-5 py-4 flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-fire-500 flex items-center justify-center flex-shrink-0">
                 <Award className="w-5 h-5 text-white" />
               </div>
@@ -134,7 +134,7 @@ export default function About() {
             <motion.div
               key={title}
               variants={fadeUp}
-              className="glass card-hover rounded-2xl p-6 border border-slate-900/5 group"
+              className="glass card-hover rounded-2xl p-6 border border-neutral-900/5 group"
             >
               <div className="w-11 h-11 rounded-xl bg-fire-500/10 border border-fire-500/20 flex items-center justify-center mb-4 group-hover:bg-fire-500 group-hover:border-fire-500 transition-all duration-300">
                 <Icon className="w-5 h-5 text-fire-500 group-hover:text-white transition-colors duration-300" />

@@ -28,23 +28,23 @@ const PRODUCTS: Product[] = [
     desc: 'Multi-purpose ISI marked extinguisher effective on Class A, B & C fires. Available from 1 kg to 75 kg for offices, factories, and vehicles.',
     tag: 'Best Seller',
     iconAccent: 'bg-fire-500/15 border-fire-500/30',
-    iconText: 'text-fire-400',
+    iconText: 'text-fire-500',
   },
   {
     icon: Wind,
     name: 'CO₂ Fire Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Zero residue, safe on live electrical equipment. Ideal for server rooms, switchgear panels, labs, and offices.',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
   {
     icon: Droplets,
     name: 'AFFF Foam Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Creates a cooling foam blanket over burning liquids, preventing re-ignition. Highly effective on Class A & B fires.',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
   {
     icon: Zap,
@@ -52,8 +52,8 @@ const PRODUCTS: Product[] = [
     category: 'Fire Extinguisher',
     desc: 'FM-200 / Novec 1230 clean agent. No ozone depletion, no damage to electronics. Perfect for data centres and clean rooms.',
     tag: 'Premium',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
   {
     icon: ShieldAlert,
@@ -61,15 +61,15 @@ const PRODUCTS: Product[] = [
     category: 'Fire System',
     desc: 'Complete wet/dry riser hydrant systems with pumps, hose reels, landing valves, and fire cabinets for large commercial and industrial premises.',
     iconAccent: 'bg-fire-600/15 border-fire-600/30',
-    iconText: 'text-fire-400',
+    iconText: 'text-fire-500',
   },
   {
     icon: BellRing,
     name: 'Fire Alarm System',
     category: 'Detection',
     desc: 'Conventional and addressable control panels with smoke detectors, heat detectors, manual call points, and sounder units.',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
   {
     icon: Package,
@@ -77,16 +77,16 @@ const PRODUCTS: Product[] = [
     category: 'Suppression',
     desc: 'Total flooding suppression using clean agent or CO₂. Engineered for data centres, server rooms, and archive vaults.',
     tag: 'Specialist',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
   {
     icon: Thermometer,
     name: 'K-Type Kitchen Extinguisher',
     category: 'Fire Extinguisher',
     desc: 'Wet chemical formulation reacts with cooking oils to form a soapy foam layer, suppressing flames and preventing re-ignition in commercial kitchens.',
-    iconAccent: 'bg-neutral-500/15 border-neutral-500/30',
-    iconText: 'text-neutral-400',
+    iconAccent: 'bg-fire-500/15 border-fire-500/30',
+    iconText: 'text-fire-500',
   },
 ]
 
@@ -104,7 +104,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="relative glass rounded-2xl p-6 border border-slate-900/5
+      className="relative glass rounded-2xl p-6 border border-neutral-900/5
                  hover:border-fire-500/25 hover:bg-fire-500/[0.025]
                  transition-all duration-400 group overflow-hidden
                  flex flex-col h-full"
@@ -146,7 +146,7 @@ function ProductCard({ product }: { product: Product }) {
         href={enquireUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-xs font-bold text-fire-400 border border-fire-500/25 hover:border-fire-500/50 hover:bg-fire-500/10 rounded-lg px-4 py-2 transition-all duration-300 w-fit"
+        className="inline-flex items-center gap-2 text-xs font-bold text-fire-500 border border-fire-500/25 hover:border-fire-500/50 hover:bg-fire-500/10 rounded-lg px-4 py-2 transition-all duration-300 w-fit"
       >
         <MessageCircle className="w-3.5 h-3.5" />
         Enquire Now

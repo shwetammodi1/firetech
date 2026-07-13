@@ -13,11 +13,10 @@ const QUICK_LINKS = [
 ]
 
 const PRODUCT_LINKS = [
-  { label: 'Fire Extinguishers',  to: '/products#extinguishers' },
-  { label: 'Fire Hydrant System', to: '/products#hydrant' },
-  { label: 'Fire Alarm Systems',  to: '/products#alarm' },
-  { label: 'Suppression Systems', to: '/products#suppression' },
-  { label: 'Safety Products',     to: '/products#safety' },
+  { label: 'Fire Extinguishers',       to: '/products#extinguishers' },
+  { label: 'Fire Hydrant System',      to: '/products#hydrant' },
+  { label: 'Fire Suppression System',  to: '/products#suppression' },
+  { label: 'Fire Alarm & Accessories', to: '/products#safety' },
 ]
 
 const SOCIAL = [
@@ -40,8 +39,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4 flex flex-col gap-5">
             <Link to="/" className="flex items-center gap-2.5 w-fit">
-              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
-                <Flame className="w-5 h-5 text-neutral-950" />
+              <div className="w-10 h-10 rounded-lg bg-fire-500 flex items-center justify-center">
+                <Flame className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-heading font-black text-lg tracking-[0.18em] text-white">FIRETECH</span>

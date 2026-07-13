@@ -34,7 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "We engaged Firetech for fire alarm and sprinkler installation across three of our hotels. The team was highly organized, completed the work well within deadline, and ensured minimal disruption to guests. Their post-installation support has been outstanding.",
     initials: 'PN',
-    color: 'bg-neutral-500/20 text-neutral-300',
+    color: 'bg-fire-500/20 text-fire-300',
   },
   {
     name: 'Dr. Anil Mehta',
@@ -44,7 +44,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: 'For a hospital, fire safety is not optional — it\'s critical. Firetech understood this from day one. They designed a comprehensive fire protection system that met all NBC and NABH requirements. Highly recommended for healthcare facilities.',
     initials: 'AM',
-    color: 'bg-neutral-500/20 text-neutral-300',
+    color: 'bg-fire-500/20 text-fire-300',
   },
   {
     name: 'Kavya Reddy',
@@ -54,7 +54,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "From the first site audit to the final fire drill training for our staff, Firetech was exemplary. They're not just equipment suppliers — they're genuine safety partners. Our entire school is now fully compliant and our staff feel confident in emergencies.",
     initials: 'KR',
-    color: 'bg-neutral-500/20 text-neutral-300',
+    color: 'bg-fire-500/20 text-fire-300',
   },
   {
     name: 'Suresh Patel',
@@ -74,7 +74,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "We needed to achieve fire NOC for our new office building on a tight timeline. Firetech's team worked weekends and late evenings to get our system installed and certified in time. Exceptional dedication and zero compromise on quality.",
     initials: 'MJ',
-    color: 'bg-neutral-500/20 text-neutral-300',
+    color: 'bg-fire-500/20 text-fire-300',
   },
 ]
 
@@ -84,7 +84,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`w-3.5 h-3.5 ${i < rating ? 'text-neutral-400 fill-neutral-400' : 'text-smoke-700'}`}
+          className={`w-3.5 h-3.5 ${i < rating ? 'text-fire-500 fill-fire-400' : 'text-smoke-700'}`}
         />
       ))}
     </div>
@@ -144,13 +144,13 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="glass rounded-3xl border border-slate-900/6 overflow-hidden mb-8">
+          <div className="glass rounded-3xl border border-neutral-900/6 overflow-hidden mb-8">
             <div className="grid md:grid-cols-[1fr_2fr] gap-0">
 
               {/* Left sidebar */}
-              <div className="relative flex flex-col items-center justify-center p-6 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-slate-900/5">
+              <div className="relative flex flex-col items-center justify-center p-6 md:p-10 bg-fire-500/[0.04] border-b md:border-b-0 md:border-r border-neutral-900/5">
                 {/* Avatar */}
-                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-heading font-black mb-4 border border-slate-900/10 ${t.color}`}>
+                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-heading font-black mb-4 border border-neutral-900/10 ${t.color}`}>
                   {t.initials}
                 </div>
                 <p className="font-heading font-bold text-smoke-100 text-base text-center">{t.name}</p>
@@ -162,7 +162,7 @@ export default function Testimonials() {
                 <div className="mt-3">
                   <StarRating rating={t.rating} />
                 </div>
-                <div className="mt-3 px-3 py-1 rounded-full bg-dark-600/60 border border-slate-900/5 text-smoke-600 text-[10px] font-medium tracking-wide uppercase">
+                <div className="mt-3 px-3 py-1 rounded-full bg-dark-600/60 border border-neutral-900/5 text-smoke-600 text-[10px] font-medium tracking-wide uppercase">
                   {t.industry}
                 </div>
               </div>
@@ -193,14 +193,14 @@ export default function Testimonials() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="w-10 h-10 rounded-full glass border border-slate-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full glass border border-neutral-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="w-10 h-10 rounded-full glass border border-slate-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full glass border border-neutral-900/8 flex items-center justify-center text-smoke-400 hover:text-smoke-100 hover:border-fire-500/30 hover:bg-fire-500/10 transition-all duration-300"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -247,7 +247,7 @@ export default function Testimonials() {
                 'w-10 h-10 rounded-xl flex items-center justify-center text-xs font-heading font-black border transition-all duration-300',
                 i === active
                   ? `${t.color} border-fire-500/40 scale-110 shadow-lg shadow-fire-900/30`
-                  : 'bg-dark-600/50 text-smoke-500 border-slate-900/5 hover:border-fire-500/20',
+                  : 'bg-dark-600/50 text-smoke-500 border-neutral-900/5 hover:border-fire-500/20',
               ].join(' ')}
             >
               {t.initials}

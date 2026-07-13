@@ -41,7 +41,7 @@ function useCountUp(target: number, duration = 2000, started = false) {
 function StatCard({ item, started }: { item: StatItem; started: boolean }) {
   const count = useCountUp(item.value, 2200, started)
   return (
-    <div className="flex flex-col items-center text-center p-4 sm:p-6 glass rounded-2xl border border-slate-900/5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-300 group">
+    <div className="flex flex-col items-center text-center p-4 sm:p-6 glass rounded-2xl border border-neutral-900/5 hover:border-fire-500/20 hover:bg-fire-500/[0.03] transition-all duration-300 group">
       <div className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl gradient-fire fire-text-glow leading-none mb-2">
         {item.prefix ?? ''}{count}{item.suffix}
       </div>

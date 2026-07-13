@@ -145,7 +145,7 @@ export default function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="text-slate-200 text-base sm:text-lg md:text-xl max-w-2xl font-body font-light leading-relaxed drop-shadow-lg"
+            className="text-neutral-200 text-base sm:text-lg md:text-xl max-w-2xl font-body font-light leading-relaxed drop-shadow-lg"
           >
             India's trusted partner for{' '}
             <span className="text-neutral-300 font-medium">Fire Safety</span>,{' '}
@@ -194,7 +194,7 @@ export default function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.5 }}
-            className="text-slate-300 text-xs tracking-wide mt-1"
+            className="text-neutral-300 text-xs tracking-wide mt-1"
           >
             ✓ Free site inspection &nbsp;·&nbsp; ✓ Same-day response &nbsp;·&nbsp; ✓ Pan-India service
           </motion.p>
@@ -210,7 +210,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center px-6 py-4 bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-none sm:first:rounded-l-2xl sm:last:rounded-r-2xl border border-white/15 hover:border-neutral-400/40 transition-all duration-300 hover:bg-white/15 group w-full sm:min-w-[140px]">
                   <Icon className="w-6 h-6 text-neutral-300 mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-heading font-black text-2xl text-white">{value}</span>
-                  <span className="text-slate-300 text-xs mt-0.5 font-medium tracking-wide">{label}</span>
+                  <span className="text-neutral-300 text-xs mt-0.5 font-medium tracking-wide">{label}</span>
                 </div>
                 {idx < STATS.length - 1 && (
                   <div className="hidden sm:block w-px h-16 bg-white/15" />
@@ -224,7 +224,7 @@ export default function Hero() {
       {/* ── Scroll indicator ── */}
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-300 hover:text-white transition-colors duration-300 group z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-neutral-300 hover:text-white transition-colors duration-300 group z-10"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         aria-label="Scroll to About section"

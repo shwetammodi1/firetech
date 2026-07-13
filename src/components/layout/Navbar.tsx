@@ -6,11 +6,10 @@ import { Flame, Menu, X, ChevronDown, ChevronRight, MessageCircle } from 'lucide
 const WHATSAPP_URL = 'https://wa.me/918964005455'
 
 const PRODUCT_CATEGORIES = [
-  { label: 'Fire Extinguishers',   to: '/products#extinguishers' },
-  { label: 'Fire Hydrant System',  to: '/products#hydrant' },
-  { label: 'Fire Alarm Systems',   to: '/products#alarm' },
-  { label: 'Suppression Systems',  to: '/products#suppression' },
-  { label: 'Safety Products',      to: '/products#safety' },
+  { label: 'Fire Extinguishers',       to: '/products#extinguishers' },
+  { label: 'Fire Hydrant System',      to: '/products#hydrant' },
+  { label: 'Fire Suppression System',  to: '/products#suppression' },
+  { label: 'Fire Alarm & Accessories', to: '/products#safety' },
 ]
 
 const NAV_LINKS = [
@@ -67,7 +66,7 @@ export default function Navbar() {
 
             {/* ── Logo ── */}
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0" aria-label="Firetech Enterprises — Home">
-              <div className="w-9 h-9 rounded-lg bg-neutral-900 flex items-center justify-center group-hover:bg-black transition-colors duration-300">
+              <div className="w-9 h-9 rounded-lg bg-fire-500 flex items-center justify-center group-hover:bg-fire-600 transition-colors duration-300">
                 <Flame className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col leading-none select-none">
@@ -89,7 +88,7 @@ export default function Navbar() {
                       to={link.to}
                       className={({ isActive }) => [
                         'flex items-center gap-1 px-4 py-2.5 text-[0.82rem] font-semibold tracking-wide rounded-md transition-colors duration-200',
-                        isActive ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900',
+                        isActive ? 'text-fire-600' : 'text-neutral-600 hover:text-fire-600',
                       ].join(' ')}
                     >
                       {link.label}
@@ -118,7 +117,7 @@ export default function Navbar() {
                     end={link.to === '/'}
                     className={({ isActive }) => [
                       'px-4 py-2.5 text-[0.82rem] font-semibold tracking-wide rounded-md transition-colors duration-200',
-                      isActive ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900',
+                      isActive ? 'text-fire-600' : 'text-neutral-600 hover:text-fire-600',
                     ].join(' ')}
                   >
                     {link.label}
@@ -133,7 +132,7 @@ export default function Navbar() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-2 bg-neutral-900 hover:bg-black text-white text-[0.8rem] font-bold tracking-wide px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                className="hidden sm:inline-flex items-center gap-2 bg-fire-500 hover:bg-fire-600 text-white text-[0.8rem] font-bold tracking-wide px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 Get a Quote
@@ -143,7 +142,7 @@ export default function Navbar() {
                 className={[
                   'lg:hidden relative w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300',
                   isMenuOpen
-                    ? 'bg-neutral-900 border-neutral-900 text-white'
+                    ? 'bg-fire-500 border-fire-500 text-white'
                     : 'bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50',
                 ].join(' ')}
                 onClick={() => setIsMenuOpen(prev => !prev)}
@@ -176,7 +175,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between px-5 py-5 border-b border-neutral-100">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-900 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-fire-500 flex items-center justify-center">
                     <Flame className="w-4 h-4 text-white" />
                   </div>
                   <span className="font-heading font-black text-sm tracking-[0.18em] text-neutral-900">FIRETECH</span>
@@ -214,7 +213,7 @@ export default function Navbar() {
                               <Link
                                 key={item.label}
                                 to={item.to}
-                                className="block px-4 py-2.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                                className="block px-4 py-2.5 text-sm text-neutral-600 hover:text-fire-600 transition-colors"
                               >
                                 {item.label}
                               </Link>
@@ -230,7 +229,7 @@ export default function Navbar() {
                       end={link.to === '/'}
                       className={({ isActive }) => [
                         'px-4 py-3 rounded-lg text-sm font-semibold transition-colors',
-                        isActive ? 'text-white bg-neutral-900' : 'text-neutral-700 hover:bg-neutral-50',
+                        isActive ? 'text-white bg-fire-500' : 'text-neutral-700 hover:bg-neutral-50',
                       ].join(' ')}
                     >
                       {link.label}
@@ -244,7 +243,7 @@ export default function Navbar() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2.5 bg-neutral-900 hover:bg-black text-white font-heading font-bold text-sm px-5 py-3.5 rounded-xl transition-colors duration-300"
+                  className="flex items-center justify-center gap-2.5 bg-fire-500 hover:bg-fire-600 text-white font-heading font-bold text-sm px-5 py-3.5 rounded-xl transition-colors duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Get a Quote on WhatsApp

@@ -51,7 +51,7 @@ export default function FreeServiceBanner() {
               </span>
               {' '}— Worth ₹2,000
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base mt-3 leading-relaxed">
               Book a no-obligation site inspection by our certified engineers. Valid for new
               clients only — limited slots available each month.
             </p>
@@ -69,7 +69,7 @@ export default function FreeServiceBanner() {
               Claim Free Audit
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
-            <p className="flex items-center justify-center gap-1.5 text-slate-400 text-xs mt-3">
+            <p className="flex items-center justify-center gap-1.5 text-neutral-400 text-xs mt-3">
               <ShieldCheck className="w-3.5 h-3.5 text-neutral-400" />
               No spam · Same-day response
             </p>

@@ -10,43 +10,43 @@ const CERTS = [
     gradient: 'from-fire-500 to-fire-600',
     border: 'border-fire-500/40',
     bg: 'bg-fire-500/10',
-    text: 'text-fire-400',
+    text: 'text-fire-500',
   },
   {
     code: 'ISI',
     sub: 'Marked',
     label: 'Bureau of Indian Standards',
-    gradient: 'from-neutral-400 to-neutral-600',
-    border: 'border-neutral-500/40',
-    bg: 'bg-neutral-500/10',
-    text: 'text-neutral-400',
+    gradient: 'from-fire-400 to-fire-600',
+    border: 'border-fire-500/40',
+    bg: 'bg-fire-500/10',
+    text: 'text-fire-500',
   },
   {
     code: 'BIS',
     sub: 'Certified',
     label: 'India Standard Mark',
-    gradient: 'from-neutral-400 to-neutral-600',
-    border: 'border-neutral-500/40',
-    bg: 'bg-neutral-500/10',
-    text: 'text-neutral-400',
+    gradient: 'from-fire-400 to-fire-600',
+    border: 'border-fire-500/40',
+    bg: 'bg-fire-500/10',
+    text: 'text-fire-500',
   },
   {
     code: 'MSME',
     sub: 'Registered',
     label: 'Govt. of India',
-    gradient: 'from-neutral-400 to-neutral-600',
-    border: 'border-neutral-500/40',
-    bg: 'bg-neutral-500/10',
-    text: 'text-neutral-400',
+    gradient: 'from-fire-400 to-fire-600',
+    border: 'border-fire-500/40',
+    bg: 'bg-fire-500/10',
+    text: 'text-fire-500',
   },
   {
     code: 'CE',
     sub: 'Certified',
     label: 'European Compliance',
-    gradient: 'from-neutral-400 to-neutral-600',
-    border: 'border-neutral-500/40',
-    bg: 'bg-neutral-500/10',
-    text: 'text-neutral-400',
+    gradient: 'from-fire-400 to-fire-600',
+    border: 'border-fire-500/40',
+    bg: 'bg-fire-500/10',
+    text: 'text-fire-500',
   },
 ]
 
@@ -82,7 +82,7 @@ export default function ISOBadge() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 glass-fire rounded-full px-4 py-1.5 text-xs font-bold tracking-widest text-fire-400 uppercase border border-fire-500/20">
+          <div className="inline-flex items-center gap-2 glass-fire rounded-full px-4 py-1.5 text-xs font-bold tracking-widest text-fire-500 uppercase border border-fire-500/20">
             <ShieldCheck className="w-3.5 h-3.5" />
             Our Certifications
           </div>
@@ -134,7 +134,7 @@ export default function ISOBadge() {
               </div>
               <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="w-24 h-24 rounded-2xl bg-fire-500/15 border-2 border-fire-500/40 flex items-center justify-center mb-6 fire-glow">
-                  <Award className="w-12 h-12 text-fire-400" />
+                  <Award className="w-12 h-12 text-fire-500" />
                 </div>
                 <div className="font-heading font-black text-5xl gradient-fire fire-text-glow leading-none">ISO</div>
                 <div className="font-heading font-bold text-xl text-smoke-200 mt-1 tracking-widest">9001:2015</div>
@@ -147,7 +147,7 @@ export default function ISOBadge() {
 
             {/* Right: what it means */}
             <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14">
-              <div className="inline-flex items-center gap-2 glass-fire rounded-full px-4 py-1.5 text-xs font-bold tracking-widest text-fire-400 uppercase border border-fire-500/20 mb-6 self-start">
+              <div className="inline-flex items-center gap-2 glass-fire rounded-full px-4 py-1.5 text-xs font-bold tracking-widest text-fire-500 uppercase border border-fire-500/20 mb-6 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse" />
                 Quality Certified
               </div>
